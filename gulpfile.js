@@ -15,10 +15,16 @@ gulp.task('build', function () {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss([autoprefixer(), cssnano()]))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/dist'))
 		.pipe(connect.reload())
 })
 
+gulp.task('copy-reveal-js', function () {
+	return gulp.src(['node_modules/reveal.js/{css,dist,js,plugin}/**/*', '!node_modules/reveal.js/dist/theme/*.css'])
+		.pipe(gulp.dest('dist'));
+		
+})
+		
 gulp.task('copy-assets', function () {
 	return gulp.src('css/**/assets/**/*')
 		.pipe(through2.obj(function (file, _, cb) {
@@ -28,10 +34,15 @@ gulp.task('copy-assets', function () {
 			}
 			const newPath = path.join('css', path.relative('css', file.path));
 			file.path = newPath;
-			file.contents = fs.readFileSync(file.path); // Ensure file contents are preserved
 			cb(null, file);
 		}
 		))
+		.pipe(gulp.dest('dist/dist'))
+		.pipe(connect.reload())
+})
+
+gulp.task('copy-index', function () {
+	return gulp.src('index.html')
 		.pipe(gulp.dest('dist'))
 		.pipe(connect.reload())
 })
@@ -39,7 +50,8 @@ gulp.task('copy-assets', function () {
 gulp.task('serve', function () {
 	connect.server({
 		livereload: true,
-		port: 8000
+		port: 8000,
+		root: 'dist'
 	})
 })
 
@@ -49,5 +61,5 @@ gulp.task('clean', function () {
 		.pipe(require('gulp-clean')())
 })
 
-gulp.task('build', gulp.parallel('build', 'copy-assets'))
+gulp.task('build', gulp.series('clean', 'build', 'copy-assets', 'copy-reveal-js', 'copy-index'))
 gulp.task('default', gulp.series('build'))

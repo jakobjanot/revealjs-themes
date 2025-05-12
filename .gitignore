@@ -140,4 +140,7 @@ dist
 **/.sass-cache/
 
 # Build output
-dist
+dist/css
+dist/js
+dist/dist
+dist/plugin
