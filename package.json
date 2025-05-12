@@ -6,6 +6,9 @@
   "author": "Jakob Kofoed Janot",
   "repository": "https://github.com/jakobjanot/kea",
   "license": "GPLv3",
+  "dependencies": {
+    "reveal.js": "^5.2.1"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.6",
@@ -17,7 +20,6 @@
     "gulp-sourcemaps": "^3.0.0",
     "path": "^0.12.7",
     "postcss": "^8.5.3",
-    "reveal.js": "^5.2.1",
     "through2": "^4.0.2"
   },
   "scripts": {

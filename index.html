@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="data:," />
+    <title>KEA</title>
+
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/kea.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+# Heading size 1
+## Heading size 2
+### Heading size 3
+#### Heading size 4
+##### Heading size 5
+###### Heading size 6
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis cursus velit, at lacinia libero. 
+
+Donec fringilla dui vel ligula posuere, eget rhoncus libero semper. Etiam risus libero, consequat porta lacus at, f
+aucibus viverra purus. Nulla consectetur mi vestibulum, feugiat risus ac, hendrerit odio.
+
+---
+
+# Code
+
+```java [1-3]
+  public class HelloWorld {
+    public static void main(String[] args) {
+      System.out.println("Hello world!");
+    }
+  }
+```
+
+and `inline` too
+
+---
+
+# Tables
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Row 1    | Row 1    |
+| Row 2    | Row 2    | Row 2    |
+| Row 3    | Row 3    | Row 3    |
+
+</section>
+</div>
+</div>
+
+<script src="node_modules/reveal.js/dist/reveal.js"></script>
+
+<!-- plugins -->
+<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="node_modules/reveal.js/plugin/math/math.js"></script>
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+Reveal.initialize({
+    hash: false,
+    center: true,
+    controls: true,
+    progress: true,
+    plugins: [
+        RevealNotes, 
+        RevealMath,
+        RevealMarkdown,
+        RevealHighlight
+    ] 
+});
+</script>
+</body>
+</html>

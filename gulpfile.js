@@ -36,16 +36,10 @@ gulp.task('copy-assets', function () {
 		.pipe(connect.reload())
 })
 
-gulp.task('watch', function () {
-	gulp.watch('css/**/*.scss', gulp.series('build'))
-	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets'))
-})
-
-gulp.task('connect', function () {
+gulp.task('serve', function () {
 	connect.server({
 		livereload: true,
-		port: 8000,
-		root: ['dist/slides', 'dist/css', 'node_modules']
+		port: 8000
 	})
 })
 
