@@ -55,11 +55,20 @@ gulp.task('serve', function () {
 	})
 })
 
+gulp.task('reload', function () {
+	return gulp.src('dist/**/*')
+		.pipe(connect.reload())
+})
+
 // Clean the dist folder
 gulp.task('clean', function () {
 	return gulp.src('dist', { read: false, allowEmpty: true })
 		.pipe(require('gulp-clean')())
 })
 
-gulp.task('build', gulp.series('clean', 'build', 'copy-assets', 'copy-reveal-js', 'copy-index'))
-gulp.task('default', gulp.series('build'))
+// Watch for changes
+gulp.task('watch', function () {
+	gulp.watch('css/**/*.scss', gulp.series('build', 'reload'))
+	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets', 'reload'))
+	gulp.watch('index.html', gulp.series('copy-index', 'reload'))
+})

@@ -43,8 +43,8 @@ $headingLetterSpacing: 0.04em;
 $headingTextTransform: normal;
 $headingFontWeight: 700;
 $linkColor: #2a76dd;
-$linkColorHover: color.scale( $linkColor, $lightness: 15% );
-$selectionBackgroundColor: color.scale( $linkColor, $lightness: 25% );
+$linkColorHover: color.scale($linkColor, $lightness: 15%);
+$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
 
 $mainFontSize: 1.4em;
 $heading1Size: 2.8em;
@@ -65,21 +65,16 @@ $overlayElementFgColor: 240, 240, 240;
 
 // Define additional color effects based on Dracula spec
 :root {
-	--r-inline-code-color: #{$inlineCodeColor};
+    --r-inline-code-color: #{$inlineCodeColor};
     --r-inline-code-bg-color: #{$inlineCodeBgColor};
 }
 
-.reveal {
-	p code {
-		color: var(--r-inline-code-color);
-        background-color: var(--r-inline-code-bg-color);
-	}
-
+.reveal p code {
+    color: var(--r-inline-code-color);
+    background-color: var(--r-inline-code-bg-color);
 }
 
-// add a logo to the bottom right corner
 .reveal-viewport {
-    
     .kea-blue {
         background-color: $keaBlue;
     }
@@ -99,11 +94,13 @@ $overlayElementFgColor: 240, 240, 240;
     .kea-dark {
         background-color: $keaDark;
     }
+}
 
+.reveal {
     background-image: url(./assets/kea.svg);
     background-size: 10%;
     background-repeat: no-repeat;
-    background-position: 0% 100%;
+    background-position: 1% 98%;
     background-attachment: fixed;
 }
 
@@ -119,6 +116,7 @@ $overlayElementFgColor: 240, 240, 240;
 .reveal p {
     line-height: 1.5;
 }
+
 .reveal ul,
 .reveal ol {
     line-height: 1.5;
@@ -127,6 +125,11 @@ $overlayElementFgColor: 240, 240, 240;
 .reveal .progress {
     background-color: $keaDark;
 }
+
+.reveal .controls {
+    color: $keaRed;
+}
+
 .reveal .progress span {
     background-color: $keaRed;
 }
