@@ -9,7 +9,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const fs = require('fs')
 const through2 = require('through2')
 
-gulp.task('build', function () {
+gulp.task('sass', function () {
 	return gulp.src('css/**/*.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
@@ -37,7 +37,7 @@ gulp.task('copy-assets', function () {
 			cb(null, file);
 		}
 		))
-		.pipe(gulp.dest('dist/dist'))
+		.pipe(gulp.dest('dist'))
 		.pipe(connect.reload())
 })
 
@@ -51,7 +51,7 @@ gulp.task('serve', function () {
 	connect.server({
 		livereload: true,
 		port: 8000,
-		root: 'dist'
+		root: './dist'
 	})
 })
 
@@ -72,3 +72,6 @@ gulp.task('watch', function () {
 	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets', 'reload'))
 	gulp.watch('index.html', gulp.series('copy-index', 'reload'))
 })
+
+gulp.task('build', gulp.series('clean', 'copy-reveal-js', 'sass', 'copy-assets', 'copy-index'))
+gulp.task('default', gulp.series('build', 'serve', 'watch'))

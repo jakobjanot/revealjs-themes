@@ -34,6 +34,9 @@ $headingColor: $keaDark;
 $inlineCodeColor: $keaRed;
 $inlineCodeBgColor: $keaRose;
 
+$strongColor: $white;
+$strongBgColor: $keaRed;
+
 $mainFont: 'Roboto', Arial, sans-serif;
 $codeFont: 'Roboto Mono', 'Courier New', Courier, monospace;
 $headingFont: 'Roboto Condensed', 'Arial Narrow', sans-serif;
@@ -67,11 +70,18 @@ $overlayElementFgColor: 240, 240, 240;
 :root {
     --r-inline-code-color: #{$inlineCodeColor};
     --r-inline-code-bg-color: #{$inlineCodeBgColor};
+    --r-strong-color: #{$strongColor};
+    --r-strong-bg-color: #{$strongBgColor};
 }
 
 .reveal p code {
     color: var(--r-inline-code-color);
     background-color: var(--r-inline-code-bg-color);
+}
+
+.reveal p strong {
+    color: var(--r-strong-color);
+    background-color: var(--r-strong-bg-color);
 }
 
 .reveal-viewport {
