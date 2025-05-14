@@ -24,6 +24,9 @@ $keaRed: #ea5045;
 $keaRose: #f7d4d1;
 $keaBlue: #9accff;
 $keaGreen: #50d57c;
+$keaLight: #ededed;
+$keaGrey: #c8d0d8;
+$keaPurple: rgba(210, 149, 228, 1);
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: $white;
@@ -84,25 +87,53 @@ $overlayElementFgColor: 240, 240, 240;
     background-color: var(--r-strong-bg-color);
 }
 
-.reveal-viewport {
+.reveal {
     .kea-blue {
-        background-color: $keaBlue;
+        background-color: $keaBlue !important;
     }
 
     .kea-green {
-        background-color: $keaGreen;
+        background-color: $keaGreen !important;
     }
 
     .kea-red {
-        background-color: $keaRed;
+        background-color: $keaRed !important;
+        --r-strong-color: $keaDark;
+        --r-strong-bg-color: $white;
+        --r-inline-code-color: $keaDark;
+        --r-inline-code-bg-color: $white;
+        --r-heading-color: $keaDark;
     }
 
     .kea-rose {
-        background-color: $keaRose;
+        background-color: $keaRose !important;
+        --r-strong-color: $keaRose;
+        --r-strong-bg-color: $white;
+        --r-inline-code-color: $keaRose;
+        --r-inline-code-bg-color: $white;
+        --r-heading-color: $keaRose;
+    }
+
+    .kea-purple {
+        background-color: $keaPurple !important;
+        --r-strong-color: $keaPurple;
+        --r-strong-bg-color: $white;
+        --r-inline-code-color: $keaPurple;
+        --r-inline-code-bg-color: $white;
+        --r-heading-color: $keaPurple;
+    }
+
+    .kea-light {
+        background-color: $keaLight !important;
+    }
+
+    .kea-grey {
+        background-color: $keaGrey !important;
     }
 
     .kea-dark {
-        background-color: $keaDark;
+        background-color: $keaDark !important;
+        color: $white !important;
     }
 }
 
