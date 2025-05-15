@@ -16,7 +16,8 @@
         <div class="slides">
             <section data-markdown data-separator="^\s*---\s*$" data-separator-vertical="^\s*--\s*$" data-separator-notes="^Notes?:">
                 <script type="text/template">  
-# KEA theme
+<!-- .slide: data-background="https://kea.dk/slir/w2280-c100x60/images/landingssider/designguide/baggrunde/teams/TEAMS_BGs4.jpg.webp" -->
+> # KEA reveal.js theme 
 
 ---
 
@@ -46,42 +47,42 @@ Lorem ipsum *dolor sit amet*, ...
 --
 <!-- .slide: class="kea-dark" -->
 # Dark variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
 --
 <!-- .slide: class="kea-red" -->
 # Red variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
 --
 <!-- .slide: class="kea-rose" -->
 # Rose variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
 --
 <!-- .slide: class="kea-blue" -->
 # Blue variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
 --
 <!-- .slide: class="kea-green" -->
 # Green variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
 --
 <!-- .slide: class="kea-light" -->
 # Light variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
 --
 <!-- .slide: class="kea-grey" -->
 # Grey variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
----
-!-- .slide: class="kea-purple" -->
+--
+<!-- .slide: class="kea-purple" -->
 # Purple variant
-Inline **strong text** and *emphasized text*.
+Inline **strong text**, *emphasized text* and `inline code`.
 
 ---
 
@@ -96,7 +97,7 @@ Inline **strong text** and *emphasized text*.
 
 A paragraph.
 
-Yet another paragraph.
+Yet another paragraph with *emphasized text* and **strong text** and [link to Google](https://www.google.com).
 
 ---
 
@@ -127,14 +128,20 @@ and `inline` too
 
 # Lists
 
+-- 
+
 - Item 1
 - Item 2
 - Item 3
+
 --
 
 1. Item 1
 2. Item 2
+  1. Nested item 1
+  2. Nested item 2
 3. Item 3
+
 --
 
 - [ ] Item 1
@@ -142,11 +149,31 @@ and `inline` too
 - [ ] Item 3
 
 ---
+
+# Blockquotes
+> This is a blockquote.
+>> Here is a nested blockquote.
+>> And another line.
+
+---
+
 # Math
 
 $$
 \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^\infty e^{-x^2/2} \, dx = 1
 $$
+
+---
+
+
+<!-- .slide: data-background="https://kea.dk/slir/w2280-c100x60/images/landingssider/designguide/baggrunde/teams/TEAMS_BGs4.jpg.webp" -->
+
+> # Background image
+>
+> Insert a background image using the `data-background` attribute, i.e.
+> ```html
+> <!-- .slide: data-background="link-to-img.png" -->
+> ```
       </script>
     </section>
   </div>
@@ -164,7 +191,7 @@ $$
 // - https://revealjs.com/initialization/
 // - https://revealjs.com/config/
 Reveal.initialize({
-    hash: false,
+    hash: true,
     center: true,
     controls: true,
     progress: true,

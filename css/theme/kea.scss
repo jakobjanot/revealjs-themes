@@ -34,7 +34,7 @@ $backgroundColor: $white;
 $mainColor: $keaDark;
 $headingColor: $keaDark;
 
-$inlineCodeColor: $keaRed;
+$inlineCodeColor: $keaDark;
 $inlineCodeBgColor: $keaRose;
 
 $strongColor: $white;
@@ -48,15 +48,15 @@ $headingTextShadow: none;
 $headingLetterSpacing: 0.04em;
 $headingTextTransform: normal;
 $headingFontWeight: 700;
-$linkColor: #2a76dd;
+$linkColor: $keaRed;
 $linkColorHover: color.scale($linkColor, $lightness: 15%);
 $selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
 
 $mainFontSize: 1.4em;
-$heading1Size: 2.8em;
-$heading2Size: 2.0em;
-$heading3Size: 1.8em;
-$heading4Size: 1.4em;
+$heading1Size: 1.9em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
 $letterSpacing: 0.04em;
 
 $overlayElementBgColor: 0, 0, 0;
@@ -88,29 +88,40 @@ $overlayElementFgColor: 240, 240, 240;
 
     .kea-red {
         background-color: $keaRed !important;
-        --r-strong-color: $keaDark;
-        --r-strong-bg-color: $white;
-        --r-inline-code-color: $keaDark;
-        --r-inline-code-bg-color: $white;
-        --r-heading-color: $keaDark;
+        color: $keaDark !important;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $white !important;
+        }
+
+        strong,
+        b {
+            background-color: $keaDark !important;
+            color: $white !important;
+        }
+
+        p code {
+            background-color: $keaRose !important;
+            color: $keaDark !important;
+        }
     }
 
     .kea-rose {
         background-color: $keaRose !important;
-        --r-strong-color: $keaRose;
-        --r-strong-bg-color: $white;
-        --r-inline-code-color: $keaRose;
-        --r-inline-code-bg-color: $white;
-        --r-heading-color: $keaRose;
+
+        p code {
+            background-color: $keaBlue !important;
+            color: $keaDark !important;
+        }
     }
 
     .kea-purple {
         background-color: $keaPurple !important;
-        --r-strong-color: $keaPurple;
-        --r-strong-bg-color: $white;
-        --r-inline-code-color: $keaPurple;
-        --r-inline-code-bg-color: $white;
-        --r-heading-color: $keaPurple;
     }
 
     .kea-light {
@@ -127,12 +138,12 @@ $overlayElementFgColor: 240, 240, 240;
     }
 }
 
-.reveal {
+body {
     background-image: url(./assets/kea.svg);
     background-size: 10%;
     background-repeat: no-repeat;
     background-position: 1% 98%;
-    background-attachment: fixed;
+    //background-attachment: fixed;
 }
 
 .reveal h1,
@@ -155,13 +166,16 @@ $overlayElementFgColor: 240, 240, 240;
 .reveal strong,
 .reveal b {
     background-color: var(--r-strong-bg-color);
-    color: var(--r-strong-color)
+    color: var(--r-strong-color);
+    border-radius: 0.2em;
+    padding: 0.1em 0.2em;
 }
 
 .reveal p code {
     color: var(--r-inline-code-color);
     background-color: var(--r-inline-code-bg-color);
-    font-size: 1.2em;
+    border-radius: 0.2em;
+    padding: 0.1em 0.2em;
 }
 
 .reveal ul,
@@ -206,6 +220,21 @@ $overlayElementFgColor: 240, 240, 240;
     quotes: none;
 }
 
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 0.2em;
+    overflow: hidden;
+}
+
+.reveal pre {
+    border-radius: 0.2em;
+    overflow: hidden;
+}
+
 .reveal blockquote {
     display: block;
     position: relative;
@@ -213,9 +242,16 @@ $overlayElementFgColor: 240, 240, 240;
     margin: 20px auto;
     padding: 5px;
     font-style: italic;
-    background: $keaRose;
-    box-shadow: 0px 0px 6px $keaRed;
+    border-radius: 0.2em;
+    box-shadow: $keaLight 0px 1px 3px 0px, $keaLight 0px 0px 0px 1px;
+    background-color: $keaLight;
+
+    blockquote {
+        background-color: $keaRose;
+    }
 }
+
+
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
@@ -224,6 +260,15 @@ $overlayElementFgColor: 240, 240, 240;
 
 .reveal q {
     font-style: italic;
+}
+
+.reveal a {
+    color: $keaRed;
+    text-decoration: none;
+}
+
+.reveal a:hover {
+    text-decoration: underline;
 }
 
 .reveal .progress {
