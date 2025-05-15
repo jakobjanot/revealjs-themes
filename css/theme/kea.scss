@@ -52,6 +52,8 @@ $linkColor: $keaRed;
 $linkColorHover: color.scale($linkColor, $lightness: 15%);
 $selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
 
+$borderRadius: 0em;
+
 $mainFontSize: 1.4em;
 $heading1Size: 1.9em;
 $heading2Size: 1.6em;
@@ -75,6 +77,7 @@ $overlayElementFgColor: 240, 240, 240;
     --r-inline-code-bg-color: #{$inlineCodeBgColor};
     --r-strong-color: #{$strongColor};
     --r-strong-bg-color: #{$strongBgColor};
+    --r-border-radius: #{$borderRadius};
 }
 
 .reveal {
@@ -167,14 +170,14 @@ body {
 .reveal b {
     background-color: var(--r-strong-bg-color);
     color: var(--r-strong-color);
-    border-radius: 0.2em;
+    border-radius: var(--r-border-radius);
     padding: 0.1em 0.2em;
 }
 
 .reveal p code {
     color: var(--r-inline-code-color);
     background-color: var(--r-inline-code-bg-color);
-    border-radius: 0.2em;
+    border-radius: var(--r-border-radius);
     padding: 0.1em 0.2em;
 }
 
@@ -226,12 +229,12 @@ body {
 .reveal iframe {
     max-width: 95%;
     max-height: 95%;
-    border-radius: 0.2em;
+    border-radius: var(--r-border-radius);
     overflow: hidden;
 }
 
 .reveal pre {
-    border-radius: 0.2em;
+    border-radius: var(--r-border-radius);
     overflow: hidden;
 }
 
@@ -242,7 +245,7 @@ body {
     margin: 20px auto;
     padding: 5px;
     font-style: italic;
-    border-radius: 0.2em;
+    border-radius: var(--r-border-radius);
     box-shadow: $keaLight 0px 1px 3px 0px, $keaLight 0px 0px 0px 1px;
     background-color: $keaLight;
 
