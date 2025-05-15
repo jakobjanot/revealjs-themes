@@ -77,16 +77,6 @@ $overlayElementFgColor: 240, 240, 240;
     --r-strong-bg-color: #{$strongBgColor};
 }
 
-.reveal p code {
-    color: var(--r-inline-code-color);
-    background-color: var(--r-inline-code-bg-color);
-}
-
-.reveal p strong {
-    color: var(--r-strong-color);
-    background-color: var(--r-strong-bg-color);
-}
-
 .reveal {
     .kea-blue {
         background-color: $keaBlue !important;
@@ -158,9 +148,82 @@ $overlayElementFgColor: 240, 240, 240;
     line-height: 1.5;
 }
 
+.reveal em {
+    font-style: italic;
+}
+
+.reveal strong,
+.reveal b {
+    background-color: var(--r-strong-bg-color);
+    color: var(--r-strong-color)
+}
+
+.reveal p code {
+    color: var(--r-inline-code-color);
+    background-color: var(--r-inline-code-bg-color);
+    font-size: 1.2em;
+}
+
 .reveal ul,
 .reveal ol {
     line-height: 1.5;
+}
+
+.reveal ol {
+    list-style-type: decimal;
+}
+
+.reveal ul {
+    list-style-type: disc;
+}
+
+.reveal ul ul {
+    list-style-type: square;
+}
+
+.reveal ul ul ul {
+    list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+    display: block;
+    margin-left: 40px;
+}
+
+.reveal dt {
+    font-weight: bold;
+}
+
+.reveal dd {
+    margin-left: 40px;
+}
+
+.reveal q,
+.reveal blockquote {
+    quotes: none;
+}
+
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 75%;
+    margin: 20px auto;
+    padding: 5px;
+    font-style: italic;
+    background: $keaRose;
+    box-shadow: 0px 0px 6px $keaRed;
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+    display: inline-block;
+}
+
+.reveal q {
+    font-style: italic;
 }
 
 .reveal .progress {

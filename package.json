@@ -23,6 +23,9 @@
     "through2": "^4.0.2"
   },
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "watch": "gulp watch",
+    "clean": "gulp clean"
   }
 }
