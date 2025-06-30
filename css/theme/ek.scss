@@ -17,6 +17,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 
+// From EK design guide
+$businessBlue: #0038A8;
+$focusBlue: #0C53ED;
+$campusGreen: #ACB504;
+$sunlitEnergy: #E8D285;
+$daylight: #F8EDCA;
+$academicFire: #FE4C61;
+$studentsBlush: #FCA28A;
+$poolsideStuy: #33ABB5;
+$pencilGrey: #333333;
+
 // Colors
 $white: #fff;
 $keaDark: #233249;
@@ -139,14 +150,37 @@ $overlayElementFgColor: 240, 240, 240;
         background-color: $keaDark !important;
         color: $white !important;
     }
+
+    .ek-business-blue {
+        background-color: $businessBlue !important;
+    }
+
+    .ek-focus-blue {
+        background-color: $focusBlue !important;
+    }
+
+    .ek-campus-green {
+        background-color: $campusGreen !important;
+    }
+
+    .ek-sunlit-energy {
+        background-color: $sunlitEnergy !important;
+    }
+
+    .ek-daylight {
+        background-color: $daylight !important;
+    }
 }
 
 body {
-    background-image: url(./assets/kea.svg);
-    background-size: 10%;
+    background-image: url(./assets/ek-bg.svg);
+    background-size: cover; /* or contain, depending on your needs */
     background-repeat: no-repeat;
-    background-position: 1% 98%;
-    //background-attachment: fixed;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .reveal h1,
@@ -197,6 +231,7 @@ body {
 .reveal pre {
     border-radius: var(--r-border-radius);
     overflow: hidden;
+    font-size: clamp(0.5em, calc(1.2em - (var(--line-count, 1) * 0.05em)), 1.2em);
 }
 
 .reveal blockquote {
