@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="data:," />
+    <title>KEA</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/kea.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown data-separator="^\s*---\s*$" data-separator-vertical="^\s*--\s*$" data-separator-notes="^Notes?:">
+                <script type="text/template">  
+          <!-- .slide: data-background="https://kea.dk/slir/w2280-c100x60/images/landingssider/designguide/baggrunde/teams/TEAMS_BGs4.jpg.webp" -->
+          > # KEA reveal.js theme 
+
+          ---
+
+          # Slide color variants
+          This is the **default slide color**.
+
+          Availabe variants are:
+          - kea-dark
+          - kea-red
+          - kea-rose
+          - kea-blue
+          - kea-green
+          - kea-light
+          - kea-grey
+          - kea-purple
+
+          --
+
+          Use e.g. `class="kea-dark"` in the slide tag to change the color of the slide.
+
+          ```markdown
+          <!-- .slide: class="kea-dark" -->
+          # Dark variant
+          Lorem ipsum *dolor sit amet*, ...
+          ```
+
+          --
+          <!-- .slide: class="kea-dark" -->
+          # Dark variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          --
+          <!-- .slide: class="kea-red" -->
+          # Red variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          --
+          <!-- .slide: class="kea-rose" -->
+          # Rose variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          --
+          <!-- .slide: class="kea-blue" -->
+          # Blue variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          --
+          <!-- .slide: class="kea-green" -->
+          # Green variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          --
+          <!-- .slide: class="kea-light" -->
+          # Light variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          --
+          <!-- .slide: class="kea-grey" -->
+          # Grey variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          --
+          <!-- .slide: class="kea-purple" -->
+          # Purple variant
+          Inline **strong text**, *emphasized text* and `inline code`.
+
+          ---
+
+          # Headings
+
+          # H1
+          ## H2
+          ### H3
+          #### H4
+          ##### H5
+          ###### H6
+
+          A paragraph.
+
+          Yet another paragraph with *emphasized text* and **strong text** and [link to Google](https://www.google.com).
+
+          ---
+
+
+          # Code font-size styles after content font-size
+
+          --
+          
+          ```java
+          public class HelloWorld {
+            public static void main(String[] args) {
+              System.out.println("Hello world!");
+            }
+          }
+          ```
+
+          --
+
+          ```java
+          public class HelloWorld {
+            public static void main(String[] args) {
+              System.out.println("Hello world!");  System.out.println("Hello world!"); System.out.println("Hello world!"); 
+              System.out.println("Hello world!"); System.out.println("Hello world!"); System.out.println("Hello world!"); 
+              System.out.println("Hello world!");
+              System.out.println("Hello world!");
+              
+            }
+          }
+          ```
+
+          ---
+
+
+          # Code line-by-line hightlighting
+
+          ```java [|1,5|2-4]
+          public class HelloWorld {
+            public static void main(String[] args) {
+              System.out.println("Hello world!");
+            }
+          }
+          ```
+
+          and `inline` too
+
+          ---
+
+          # Tables
+
+          | Header 1 | Header 2 | Header 3 |
+          |----------|----------|----------|
+          | Row 1    | Row 1    | Row 1    |
+          | Row 2    | Row 2    | Row 2    |
+          | Row 3    | Row 3    | Row 3    |
+
+          ---
+
+          # Lists
+
+          -- 
+
+          - Item 1
+          - Item 2
+          - Item 3
+
+          --
+
+          1. Item 1
+          2. Item 2
+            1. Nested item 1
+            2. Nested item 2
+          3. Item 3
+
+          --
+
+          - [ ] Item 1
+          - [x] Item 2
+          - [ ] Item 3
+
+          ---
+
+          # Blockquotes
+          > This is a blockquote.
+          >> Here is a nested blockquote.
+          >> And another line.
+
+          ---
+
+          # Math
+
+          $$
+          \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^\infty e^{-x^2/2} \, dx = 1
+          $$
+      </script>
+    </section>
+  </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+
+<!-- plugins -->
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script src="plugin/math/math.js"></script>
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+Reveal.initialize({
+    hash: true,
+    center: true,
+    controls: true,
+    progress: true,
+    plugins: [
+        RevealNotes, 
+        RevealMath,
+        RevealMarkdown,
+        RevealHighlight
+    ] 
+});
+</script>
+</body>
+</html>
