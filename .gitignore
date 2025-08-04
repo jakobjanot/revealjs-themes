@@ -144,3 +144,8 @@ dist/css
 dist/js
 dist/dist
 dist/plugin
+
+ek-design
+
+.DS_Store
+Thumbs.db
