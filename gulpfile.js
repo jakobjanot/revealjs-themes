@@ -15,7 +15,7 @@ gulp.task('sass', function () {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss([autoprefixer(), cssnano()]))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('dist/dist'))
+		.pipe(gulp.dest('dist'))
 		.pipe(connect.reload())
 })
 

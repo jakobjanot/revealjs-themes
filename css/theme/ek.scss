@@ -17,6 +17,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');
 
+// From EK design guide
+$businessBlue: #0038A8;
+$focusBlue: #0C53ED;
+$campusGreen: #ACB504;
+$sunlitEnergy: #E8D285;
+$daylight: #F8EDCA;
+$academicFire: #FE4C61;
+$studentsBlush: #FCA28A;
+$poolsideStuy: #33ABB5;
+$pencilGrey: #333333;
+
 // Colors
 $white: #fff;
 $keaDark: #233249;
@@ -80,6 +91,26 @@ $overlayElementFgColor: 240, 240, 240;
     --r-border-radius: #{$borderRadius};
 }
 
+@mixin ek-svg-background($color1, $color2) {
+    --color1: #{$color1};
+    --color2: #{$color2};
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%223118.111%22%20height%3D%222204.726%22%20viewBox%3D%220%200%202338.583%201653.544%22%20fill%3D%22var(--r-bg-color2%2C%20%23f8edca)%22%3E%3Cpath%20d%3D%22M0%201653.544h2338.583V.008H0Z%22%2F%3E%3Cpath%20d%3D%22M902.759%20994.138V755.191c0-24.07-19.511-43.58-43.58-43.58H-742.414c-24.07%200-43.58%2019.51-43.58%2043.58v1348.247c0%2024.07%2019.51%2043.58%2043.58%2043.58H859.178c24.07%200%2043.58-19.51%2043.58-43.58V1788.41c0-29.808-29.194-50.802-57.452-41.31-136.294%2045.785-501.672%20152.302-951.097%20152.302-36.961%200-97.322-1.87-137.783-3.289-23.462-.82-42.006-20.078-42.006-43.553v-279.81c0-25.598%2021.956-45.684%2047.453-43.409l699.26%2062.375a43.59%2043.59%200%200%200%2041.756-21.864l110.059-193.494c17.566-30.886-7.211-68.692-42.534-64.822-266.902%2029.26-537.872%2044.997-812.21%2046.51-24.142.134-43.784-19.505-43.784-43.65v-233.094c0-24.07%2019.511-43.583%2043.58-43.583H859.179c24.07%200%2043.58-19.511%2043.58-43.58M1516.65%202147.02h-413.253c-24.067%200-43.578-19.511-43.578-43.58V755.191c0-24.07%2019.511-43.583%2043.578-43.583h413.253c24.07%200%2043.58%2019.514%2043.58%2043.583V2103.44c0%2024.07-19.51%2043.58-43.58%2043.58m1021.884-380.518c-174.495-240.794-487.295-344.797-820.917-344.797-18.742-.256-25.75-24.911-9.83-34.803%20196.955-122.364%20424.53-149.891%20729.263-150.975%2012.27-.041%2024.022-5.22%2032.256-14.32l395.533-437.177c25.35-28.02%205.47-72.82-32.317-72.82h-587.027a43.6%2043.6%200%200%200-32.317%2014.342l-601.992%20665.375c-15.139%2016.734-15.002%2042.256.317%2058.825l631.328%20682.872a43.58%2043.58%200%200%200%2032%2013.995h516.733c41.328%200%2059.472-52.092%2027.056-77.725-71.817-56.792-170.167-151.111-280.086-302.792%22%20fill%3D%22var(--r-bg-color1%2C%20%23fca28a)%22%2F%3E%3C%2Fsvg%3E");
+    //background-image: url(assets/ek-bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+@mixin k-svg-background($color1, $color2) {
+    --color1: #{$color1};
+    --color2: #{$color2};
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%223118.111%22%20height%3D%222204.726%22%20viewBox%3D%220%200%202338.583%201653.544%22%20fill%3D%22var(--color2%2C%20%23f8edca)%22%3E%3Cpath%20d%3D%22M0%201653.544h2338.583V.008H0Z%22%2F%3E%3Cpath%20d%3D%22M1111.782%201231.962C900.72%20940.706%20522.368%20814.906%20118.829%20814.906c-22.667-.308-31.144-30.13-11.889-42.094%20238.23-148.006%20513.497-181.306%20882.092-182.614%2014.842-.053%2029.058-6.314%2039.014-17.322L1506.47%2044.084c30.66-33.892%206.614-88.08-39.092-88.08H757.335a52.7%2052.7%200%200%200-39.092%2017.347L-9.904%20778.164c-18.311%2020.24-18.145%2051.112.383%2071.153l763.63%20825.975a52.7%2052.7%200%200%200%2038.706%2016.93h625.022c49.992%200%2071.94-63.008%2032.728-94.016-86.87-68.692-205.828-182.778-338.783-366.244%22%20fill%3D%22var(--color1%2C%20%23e8d285)%22%2F%3E%3C%2Fsvg%3E");
+    //background-image: url(assets/k-bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
 .reveal {
     .kea-blue {
         background-color: $keaBlue !important;
@@ -139,14 +170,31 @@ $overlayElementFgColor: 240, 240, 240;
         background-color: $keaDark !important;
         color: $white !important;
     }
-}
 
-body {
-    background-image: url(./assets/kea.svg);
-    background-size: 10%;
-    background-repeat: no-repeat;
-    background-position: 1% 98%;
-    //background-attachment: fixed;
+    
+    .ek-business-blue {
+        @include ek-svg-background(#{$businessBlue}, #{$campusGreen});
+    }
+
+    .k-business-blue {
+        @include k-svg-background(#{$businessBlue}, #{$campusGreen});
+    }
+
+    .ek-focus-blue {
+        @include ek-svg-background(#{$focusBlue}, #{$daylight});
+    }
+
+    .ek-campus-green {
+        @include ek-svg-background(#{$campusGreen}, #{$studentsBlush});
+    }
+
+    .ek-sunlit-energy {
+        @include ek-svg-background(#{$sunlitEnergy}, #{$daylight});
+    }
+
+    .ek-daylight {
+        @include ek-svg-background(#{$daylight}, #{$academicFire});
+    }
 }
 
 .reveal h1,
@@ -197,6 +245,7 @@ body {
 .reveal pre {
     border-radius: var(--r-border-radius);
     overflow: hidden;
+    font-size: clamp(0.5em, calc(1.2em - (var(--line-count, 1) * 0.05em)), 1.2em);
 }
 
 .reveal blockquote {
