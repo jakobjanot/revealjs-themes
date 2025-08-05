@@ -69,9 +69,9 @@ gulp.task('clean', function () {
 // Watch for changes
 gulp.task('watch', function () {
 	console.log('Watching for changes...');
-	gulp.watch('css/**/*.scss', gulp.series('build', 'reload'))
-	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets', 'reload'))
-	gulp.watch('index.html', gulp.series('copy-index', 'reload'))
+	gulp.watch('css/**/*.scss', gulp.series('sass'))
+	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets'))
+	gulp.watch('index.html', gulp.series('copy-index'))
 })
 
 gulp.task('build', gulp.series('clean', gulp.parallel('copy-reveal-js', 'sass', 'copy-assets', 'copy-index')))
