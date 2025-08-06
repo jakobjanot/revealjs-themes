@@ -621,3 +621,9 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
 .reveal .progress span {
     background-color: $academicFire;
 }
+
+// put a thin border around the slides when printing
+html.reveal-print .pdf-page {
+    border: 1px solid $dark !important;
+    border-bottom: none !important;
+}
