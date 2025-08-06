@@ -2,20 +2,17 @@ const autoprefixer = require('autoprefixer')
 const connect = require('gulp-connect')
 const cssnano = require('cssnano')
 const gulp = require('gulp')
-const path = require('path')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-dart-sass')
 const sourcemaps = require('gulp-sourcemaps')
-const fs = require('fs')
-const through2 = require('through2')
 
 gulp.task('sass', function () {
-	return gulp.src('css/**/*.scss')
+	return gulp.src('css/**/*.scss', { allowEmpty: true })
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss([autoprefixer(), cssnano()]))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/theme'))
 		.pipe(connect.reload())
 })
 
@@ -26,18 +23,8 @@ gulp.task('copy-reveal-js', function () {
 })
 		
 gulp.task('copy-assets', function () {
-	return gulp.src('css/**/assets/**/*')
-		.pipe(through2.obj(function (file, _, cb) {
-			if (file.isDirectory()) {
-				cb(null, file);
-				return;
-			}
-			const newPath = path.join('css', path.relative('css', file.path));
-			file.path = newPath;
-			cb(null, file);
-		}
-		))
-		.pipe(gulp.dest('dist'))
+	return gulp.src('css/theme/assets/**/*', { allowEmpty: true })
+		.pipe(gulp.dest('dist/theme/assets'))
 		.pipe(connect.reload())
 })
 
