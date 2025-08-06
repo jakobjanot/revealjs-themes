@@ -293,14 +293,20 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
 }
 
 @mixin cover-background($image-url) {
-    background-image: url("assets/studerende-blomster-terrasse.jpg");
+    background-image: url($image-url);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
-.reveal {
+// HACK: Remove weird duplicate background svg image
+.reveal .slides > section > section {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
+.reveal-viewport {
     // Business blue variants
     .business-blue {
         @include dark-color-background($businessBlue);
