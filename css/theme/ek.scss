@@ -175,6 +175,27 @@ $black: #000000;
 $light: #ffffff;
 $dark: $pencilGrey;
 
+// Jakob's additions
+$bluey: #d9ddff;
+$spongebob: #EBD93B;
+$patrickStar: #ff959e;
+$tinkyWinky: #CBA3FF;
+$kermit: #B0DEB7;
+$businessBlueSecondary: $focusBlue;
+$focusBlueSecondary: #084cdd;
+$campusGreenSecondary: #a3ab16;
+$sunlitEnergySecondary: #efdc95;
+$daylightSecondary: #fdecab;
+$academicFireSecondary: #f83e51;
+$studentsBlushSecondary: #f2a0b4;
+$poolsideStudySecondary: #32b4c0;
+$pencilGreySecondary: #2d2c2c;
+$blueySecondary: #ebe6fe;
+$spongebobSecondary: #f9e05b;
+$patrickStarSecondary: #fba5ac;
+$tinkyWinkySecondary: #d1aeff;
+$kermitSecondary: #a9d6b0;
+
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: $light;
 
@@ -313,11 +334,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-business-blue {
-        @include dark-svg-background(#{$businessBlue}, $focusBlue, $ek-svg);
+        @include dark-svg-background(#{$businessBlue}, $businessBlueSecondary, $ek-svg);
     }
 
     .k-business-blue {
-        @include dark-svg-background(#{$businessBlue}, $focusBlue, $k-svg);
+        @include dark-svg-background(#{$businessBlue}, $businessBlueSecondary, $k-svg);
     }
 
     // Focus blue variants
@@ -326,11 +347,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-focus-blue {
-        @include dark-svg-background(#{$focusBlue}, $poolsideStudy, $ek-svg);
+        @include dark-svg-background(#{$focusBlue}, $focusBlueSecondary, $ek-svg);
     }
 
     .k-focus-blue {
-        @include dark-svg-background(#{$focusBlue}, $poolsideStudy, $k-svg);
+        @include dark-svg-background(#{$focusBlue}, $focusBlueSecondary, $k-svg);
     }
 
     // Campus green variants
@@ -339,11 +360,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-campus-green {
-        @include svg-background(#{$campusGreen}, #{$sunlitEnergy}, $ek-svg);
+        @include svg-background(#{$campusGreen}, $campusGreenSecondary, $ek-svg);
     }
 
     .k-campus-green {
-        @include svg-background(#{$campusGreen}, #{$sunlitEnergy}, $k-svg);
+        @include svg-background(#{$campusGreen}, $campusGreenSecondary, $k-svg);
     }
 
     // Sunlit Energy variants
@@ -352,11 +373,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-sunlit-energy {
-        @include svg-background(#{$sunlitEnergy}, #{$daylight}, $ek-svg);
+        @include svg-background(#{$sunlitEnergy}, $sunlitEnergySecondary, $ek-svg);
     }
 
     .k-sunlit-energy {
-        @include svg-background(#{$sunlitEnergy}, #{$daylight}, $k-svg);
+        @include svg-background(#{$sunlitEnergy}, $sunlitEnergySecondary, $k-svg);
     }
 
     // Daylight variants
@@ -365,11 +386,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-daylight {
-        @include svg-background(#{$daylight}, #{$sunlitEnergy}, $ek-svg);
+        @include svg-background(#{$daylight}, $daylightSecondary, $ek-svg);
     }
 
     .k-daylight {
-        @include svg-background(#{$daylight}, #{$sunlitEnergy}, $k-svg);
+        @include svg-background(#{$daylight}, $daylightSecondary, $k-svg);
     }
 
     // Academic fire variants
@@ -378,24 +399,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-academic-fire {
-        @include dark-svg-background(#{$academicFire}, #{$studentsBlush}, $ek-svg);
+        @include dark-svg-background(#{$academicFire}, $academicFireSecondary, $ek-svg);
     }
 
     .k-academic-fire {
-        @include dark-svg-background(#{$academicFire}, #{$studentsBlush}, $k-svg);
-    }
-
-    // Students blush variants
-    .students-blush {
-        @include color-background($studentsBlush);
-    }
-
-    .ek-students-blush {
-        @include dark-svg-background(#{$studentsBlush}, #{$academicFire}, $ek-svg);
-    }
-
-    .k-students-blush {
-        @include dark-svg-background(#{$studentsBlush}, #{$academicFire}, $k-svg);
+        @include dark-svg-background(#{$academicFire}, $academicFireSecondary, $k-svg);
     }
 
     // Poolside Study variants
@@ -404,11 +412,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-poolside-study {
-        @include svg-background(#{$poolsideStudy}, #{$campusGreen}, $ek-svg);
+        @include svg-background(#{$poolsideStudy}, $poolsideStudySecondary, $ek-svg);
     }
 
     .k-poolside-study {
-        @include svg-background(#{$poolsideStudy}, #{$campusGreen}, $k-svg);
+        @include svg-background(#{$poolsideStudy}, $poolsideStudySecondary, $k-svg);
     }
 
     // Pencil grey variants
@@ -417,11 +425,76 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-pencil-grey {
-        @include dark-svg-background(#{$pencilGrey}, $grey, $ek-svg);
+        @include dark-svg-background(#{$pencilGrey}, $pencilGreySecondary, $ek-svg);
     }
 
     .k-pencil-grey {
-        @include dark-svg-background(#{$pencilGrey}, $grey, $k-svg);
+        @include dark-svg-background(#{$pencilGrey}, $pencilGreySecondary, $k-svg);
+    }
+
+    // Bluey variants
+    .bluey {
+        @include color-background($bluey);
+    }
+    
+    .ek-bluey {
+        @include svg-background(#{$bluey}, $blueySecondary, $ek-svg);
+    }
+    
+    .k-bluey {
+        @include svg-background(#{$bluey}, $blueySecondary, $k-svg);
+    }
+
+    // Spongebob variants
+    .spongebob {
+        @include color-background($spongebob);
+    }
+
+    .ek-spongebob {
+        @include svg-background(#{$spongebob}, $spongebobSecondary, $ek-svg);
+    }
+
+    .k-spongebob {
+        @include svg-background(#{$spongebob}, $spongebobSecondary, $k-svg);
+    }
+
+    // Patrick Star variants
+    .patrick-star {
+        @include color-background($patrickStar);
+    }
+
+    .ek-patrick-star {
+        @include svg-background(#{$patrickStar}, $patrickStarSecondary, $ek-svg);
+    }
+
+    .k-patrick-star {
+        @include svg-background(#{$patrickStar}, $patrickStarSecondary, $k-svg);
+    }
+
+    // Tinky-winky variants
+    .tinky-winky {
+        @include color-background($tinkyWinky);
+    }
+
+    .ek-tinky-winky {
+        @include svg-background(#{$tinkyWinky}, $tinkyWinkySecondary, $ek-svg);
+    }
+
+    .k-tinky-winky {
+        @include svg-background(#{$tinkyWinky}, $tinkyWinkySecondary, $k-svg);
+    }
+
+    // Kermit variants
+    .kermit {
+        @include color-background($kermit);
+    }
+
+    .ek-kermit {
+        @include svg-background(#{$kermit}, $kermitSecondary, $ek-svg);
+    }
+
+    .k-kermit {
+        @include svg-background(#{$kermit}, $kermitSecondary, $k-svg);
     }
 
     // Image backgrounds
