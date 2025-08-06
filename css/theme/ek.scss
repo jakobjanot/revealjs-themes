@@ -180,7 +180,7 @@ $bluey: #d9ddff;
 $spongebob: #EBD93B;
 $patrickStar: #ff959e;
 $tinkyWinky: #CBA3FF;
-$kermit: #B0DEB7;
+$squidward: #B0DEB7;
 $businessBlueSecondary: $focusBlue;
 $focusBlueSecondary: #084cdd;
 $campusGreenSecondary: #a3ab16;
@@ -194,7 +194,7 @@ $blueySecondary: #ebe6fe;
 $spongebobSecondary: #f9e05b;
 $patrickStarSecondary: #fba5ac;
 $tinkyWinkySecondary: #d1aeff;
-$kermitSecondary: #a9d6b0;
+$squidwardSecondary: #a9d6b0;
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: $light;
@@ -484,17 +484,17 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
         @include svg-background(#{$tinkyWinky}, $tinkyWinkySecondary, $k-svg);
     }
 
-    // Kermit variants
-    .kermit {
-        @include color-background($kermit);
+    // Squidward variants
+    .squidward {
+        @include color-background($squidward);
     }
 
-    .ek-kermit {
-        @include svg-background(#{$kermit}, $kermitSecondary, $ek-svg);
+    .ek-squidward {
+        @include svg-background(#{$squidward}, $squidwardSecondary, $ek-svg);
     }
 
-    .k-kermit {
-        @include svg-background(#{$kermit}, $kermitSecondary, $k-svg);
+    .k-squidward {
+        @include svg-background(#{$squidward}, $squidwardSecondary, $k-svg);
     }
 
     // Image backgrounds
