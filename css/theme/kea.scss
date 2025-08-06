@@ -252,3 +252,10 @@ body {
 .reveal .progress span {
     background-color: $keaRed;
 }
+
+
+// put a thin border around the slides when printing
+html.reveal-print .pdf-page {
+    border: 1px solid $dark !important;
+    border-bottom: none !important;
+}
