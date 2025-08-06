@@ -1,12 +1,13 @@
 /**
- * White theme for reveal.js. This is the opposite of the 'black' theme.
- *
- * By Hakim El Hattab, http://hakim.se
+ * Erhvervsakademi København (EK) Reveal.js Theme
+ * This theme is based on the Reveal.js default theme and
+ * incorporates the EK design guide colors and styles.
  */
 
 
 // Default mixins and settings -----------------
 @use "sass:color";
+@use "sass:string";
 @import "../../node_modules/reveal.js/css/theme/template/mixins";
 @import "../../node_modules/reveal.js/css/theme/template/settings";
 // ---------------------------------------------
@@ -25,31 +26,24 @@ $sunlitEnergy: #E8D285;
 $daylight: #F8EDCA;
 $academicFire: #FE4C61;
 $studentsBlush: #FCA28A;
-$poolsideStuy: #33ABB5;
+$poolsideStudy: #33ABB5;
 $pencilGrey: #333333;
-
-// Colors
-$white: #fff;
-$dark: #233249;
-$red: #ea5045;
-$rose: #f7d4d1;
-$blue: #9accff;
-$green: #50d57c;
-$light: #ededed;
-$grey: #c8d0d8;
-$purple: rgba(210, 149, 228, 1);
+$grey: #666666;
+$black: #000000;
+$light: #ffffff;
+$dark: $pencilGrey;
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: $white;
+$backgroundColor: $light;
 
 $mainColor: $dark;
 $headingColor: $dark;
 
-$inlineCodeColor: $dark;
-$inlineCodeBgColor: $rose;
+$inlineCodeColor: $light;
+$inlineCodeBgColor: $academicFire;
 
-$strongColor: $white;
-$strongBgColor: $red;
+$strongColor: $light;
+$strongBgColor: $academicFire;
 
 $mainFont: 'Roboto', Arial, sans-serif;
 $codeFont: 'Roboto Mono', 'Courier New', Courier, monospace;
@@ -59,9 +53,9 @@ $headingTextShadow: none;
 $headingLetterSpacing: 0.04em;
 $headingTextTransform: normal;
 $headingFontWeight: 700;
-$linkColor: $red;
-$linkColorHover: color.scale($linkColor, $lightness: 15%);
-$selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
+$linkColor: $academicFire;
+$linkColorHover: $studentsBlush;
+$selectionBackgroundColor: $academicFire;
 
 $borderRadius: 0em;
 
@@ -76,7 +70,7 @@ $overlayElementBgColor: 0, 0, 0;
 $overlayElementFgColor: 240, 240, 240;
 
 // Change text colors against dark slide backgrounds
-@include dark-bg-text-color($white);
+@include dark-bg-text-color($light);
 
 // Theme template ------------------------------
 @import "../../node_modules/reveal.js/css/theme/template/theme";
@@ -96,17 +90,46 @@ $overlayElementFgColor: 240, 240, 240;
     background-image: none;
 }
 
+@mixin text-on-dark-bg($color) {
+    color: $light !important;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $light !important;
+    }
+
+    strong,
+    b {
+        background-color: $black !important;
+        color: $light !important;
+    }
+
+    p code {
+        background-color: $black !important;
+        color: $light !important;
+    }
+}
+
+@mixin dark-color-background($color) {
+    @include color-background($color);
+    @include text-on-dark-bg($light);
+}
+
 @function replace-all($string, $search, $replace) {
-  $index: str-index($string, $search);
+    $index: string.index($string, $search);
 
-  @if $index == null {
-    @return $string;
-  }
+    @if $index == null {
+        @return $string;
+    }
 
-  $before: str-slice($string, 1, $index - 1);
-  $after: str-slice($string, $index + str-length($search));
+    $before: string.slice($string, 1, $index - 1);
+    $after: string.slice($string, $index + string.length($search));
 
-  @return replace-all(#{$before}#{$replace}#{$after}, $search, $replace);
+    @return replace-all(#{$before}#{$replace}#{$after}, $search, $replace);
 }
 
 $ek-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%223118.111%22%20height%3D%222204.726%22%20viewBox%3D%220%200%202338.583%201653.544%22%20fill%3D%22COLOR2%22%3E%3Cpath%20d%3D%22M0%201653.544h2338.583V.008H0Z%22%2F%3E%3Cpath%20d%3D%22M902.759%20994.138V755.191c0-24.07-19.511-43.58-43.58-43.58H-742.414c-24.07%200-43.58%2019.51-43.58%2043.58v1348.247c0%2024.07%2019.51%2043.58%2043.58%2043.58H859.178c24.07%200%2043.58-19.51%2043.58-43.58V1788.41c0-29.808-29.194-50.802-57.452-41.31-136.294%2045.785-501.672%20152.302-951.097%20152.302-36.961%200-97.322-1.87-137.783-3.289-23.462-.82-42.006-20.078-42.006-43.553v-279.81c0-25.598%2021.956-45.684%2047.453-43.409l699.26%2062.375a43.59%2043.59%200%200%200%2041.756-21.864l110.059-193.494c17.566-30.886-7.211-68.692-42.534-64.822-266.902%2029.26-537.872%2044.997-812.21%2046.51-24.142.134-43.784-19.505-43.784-43.65v-233.094c0-24.07%2019.511-43.583%2043.58-43.583H859.179c24.07%200%2043.58-19.511%2043.58-43.58M1516.65%202147.02h-413.253c-24.067%200-43.578-19.511-43.578-43.58V755.191c0-24.07%2019.511-43.583%2043.578-43.583h413.253c24.07%200%2043.58%2019.514%2043.58%2043.583V2103.44c0%2024.07-19.51%2043.58-43.58%2043.58m1021.884-380.518c-174.495-240.794-487.295-344.797-820.917-344.797-18.742-.256-25.75-24.911-9.83-34.803%20196.955-122.364%20424.53-149.891%20729.263-150.975%2012.27-.041%2024.022-5.22%2032.256-14.32l395.533-437.177c25.35-28.02%205.47-72.82-32.317-72.82h-587.027a43.6%2043.6%200%200%200-32.317%2014.342l-601.992%20665.375c-15.139%2016.734-15.002%2042.256.317%2058.825l631.328%20682.872a43.58%2043.58%200%200%200%2032%2013.995h516.733c41.328%200%2059.472-52.092%2027.056-77.725-71.817-56.792-170.167-151.111-280.086-302.792%22%20fill%3D%22COLOR1%22%2F%3E%3C%2Fsvg%3E";
@@ -122,90 +145,165 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     background-attachment: fixed;
 }
 
+@mixin dark-svg-background($color1, $color2, $svg-data-uri) {
+    @include svg-background($color1, $color2, $svg-data-uri);
+    @include text-on-dark-bg($light);
+}
+
+@mixin cover-background($image-url) {
+    background-image: url("assets/studerende-blomster-terrasse.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .reveal {
-    .blue {
-        @include color-background($businessBlue);
-    }
-
-    .green {
-        @include color-background($campusGreen);
-    }
-
-    .red {
-        @include color-background($academicFire);
-        color: $studentsBlush !important;
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: $white !important;
-        }
-
-        strong,
-        b {
-            background-color: $dark !important;
-            color: $white !important;
-        }
-
-        p code {
-            background-color: $rose !important;
-            color: $dark !important;
-        }
-    }
-
-    .rose {
-        @include color-background($rose);
-
-        p code {
-            background-color: $blue !important;
-            color: $dark !important;
-        }
-    }
-
-    .purple {
-        @include color-background($purple);
-    }
-
-    .light {
-        @include color-background($light);
-    }
-
-    .grey {
-        @include color-background($grey);
-    }
-
-    .dark {
-        @include color-background($dark);
-        color: $white !important;
+    // Business blue variants
+    .business-blue {
+        @include dark-color-background($businessBlue);
     }
 
     
-    .ek-blue {
-        //@include svg-background(#{$businessBlue}, #{$campusGreen}, $ek-svg);
-        @include svg-background(#fff, #000, $ek-svg);
+    .ek-business-blue {
+        @include svg-background(#{$businessBlue}, $focusBlue, $ek-svg);
+        @include text-on-dark-bg($light);
     }
 
-    .k-blue {
-        @include svg-background(#{$businessBlue}, #{$campusGreen}, $k-svg);
+    .k-business-blue {
+        @include svg-background(#{$businessBlue}, $focusBlue, $k-svg);
+        @include text-on-dark-bg($light);
     }
 
-    .ek-green {
-        @include svg-background(#{$campusGreen}, #{$studentsBlush}, $ek-svg);
+    // Focus blue variants
+    .focus-blue {
+        @include dark-color-background($focusBlue);
     }
 
-    .ek-red {
+    .ek-focus-blue {
+        @include svg-background(#{$focusBlue}, $poolsideStudy, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-focus-blue {
+        @include svg-background(#{$focusBlue}, $poolsideStudy, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Campus green variants
+    .campus-green {
+        @include color-background($campusGreen);
+    }
+
+    .ek-campus-green {
+        @include svg-background(#{$campusGreen}, #{$sunlitEnergy}, $ek-svg);
+    }
+
+    .k-campus-green {
+        @include svg-background(#{$campusGreen}, #{$sunlitEnergy}, $k-svg);
+    }
+
+    // Sunlit Energy variants
+    .sunlit-energy {
+        @include color-background($sunlitEnergy);
+    }
+
+    .ek-sunlit-energy {
+        @include svg-background(#{$sunlitEnergy}, #{$daylight}, $ek-svg);
+    }
+
+    .k-sunlit-energy {
+        @include svg-background(#{$sunlitEnergy}, #{$daylight}, $k-svg);
+    }
+
+    // Daylight variants
+    .daylight {
+        @include color-background($daylight);
+    }
+
+    .ek-daylight {
+        @include svg-background(#{$daylight}, #{$sunlitEnergy}, $ek-svg);
+    }
+
+    .k-daylight {
+        @include svg-background(#{$daylight}, #{$sunlitEnergy}, $k-svg);
+    }
+
+    // Academic fire variants
+    .academic-fire {
+        @include dark-color-background($academicFire);
+    }
+
+    .ek-academic-fire {
         @include svg-background(#{$academicFire}, #{$studentsBlush}, $ek-svg);
+        @include text-on-dark-bg($light);
     }
 
-    .ek-rose {
-        @include svg-background(#{$studentsBlush}, #{$poolsideStuy}, $ek-svg);
+    .k-academic-fire {
+        @include svg-background(#{$academicFire}, #{$studentsBlush}, $k-svg);
+        @include text-on-dark-bg($light);
     }
 
-    .ek-purple {
-        @include svg-background(#{$poolsideStuy}, #{$pencilGrey}, $ek-svg);
+    // Students blush variants
+    .students-blush {
+        @include color-background($studentsBlush);
+    }
+
+    .ek-students-blush {
+        @include svg-background(#{$studentsBlush}, #{$academicFire}, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-students-blush {
+        @include svg-background(#{$studentsBlush}, #{$academicFire}, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Poolside Study variants
+    .poolside-study {
+        @include color-background($poolsideStudy);
+    }
+
+    .ek-poolside-study {
+        @include svg-background(#{$poolsideStudy}, #{$campusGreen}, $ek-svg);
+    }
+
+    .k-poolside-study {
+        @include svg-background(#{$poolsideStudy}, #{$campusGreen}, $k-svg);
+    }
+
+    // Pencil grey variants
+    .pencil-grey {
+        @include color-background($pencilGrey);
+        @include text-on-dark-bg($light);
+    }
+
+    .ek-pencil-grey {
+        @include svg-background(#{$pencilGrey}, $grey, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-pencil-grey {
+        @include svg-background(#{$pencilGrey}, $grey, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Image backgrounds
+
+    .cover-1 {
+        @include cover-background("assets/studerende-blomster-terrasse.jpg");
+    }
+
+    .cover-2 {
+        @include cover-background("assets/studerende-fra-siden.jpg");
+    }
+
+    .cover-3 {
+        @include cover-background("assets/studerende-gul-stol.jpg.webp");
+    }
+
+    .cover-4 {
+        @include cover-background("assets/studerende-laederjakke-bygning.jpg");
     }
 }
 
@@ -272,7 +370,7 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     background-color: $light;
 
     blockquote {
-        background-color: $rose;
+        background-color: $studentsBlush;
     }
 }
 
@@ -288,7 +386,7 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
 }
 
 .reveal a {
-    color: $red;
+    color: $academicFire;
     text-decoration: none;
 }
 
@@ -301,9 +399,9 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
 }
 
 .reveal .controls {
-    color: $red;
+    color: $academicFire;
 }
 
 .reveal .progress span {
-    background-color: $red;
+    background-color: $academicFire;
 }
