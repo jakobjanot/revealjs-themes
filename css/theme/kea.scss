@@ -80,6 +80,12 @@ $overlayElementFgColor: 240, 240, 240;
     --r-border-radius: #{$borderRadius};
 }
 
+// HACK: Remove weird duplicate background svg image
+.reveal .slides section {
+    background-image: none !important;
+    background-color: transparent !important;
+}
+
 .reveal {
     .kea-blue {
         background-color: $keaBlue !important;

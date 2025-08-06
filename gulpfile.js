@@ -42,7 +42,7 @@ gulp.task('copy-assets', function () {
 })
 
 gulp.task('copy-index', function () {
-	return gulp.src('index.html')
+	return gulp.src('*.html')
 		.pipe(gulp.dest('dist'))
 		.pipe(connect.reload())
 })
