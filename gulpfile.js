@@ -10,12 +10,12 @@ const fs = require('fs')
 const through2 = require('through2')
 
 gulp.task('sass', function () {
-	return gulp.src('css/**/*.scss')
+	return gulp.src('css/**/*.scss', { allowEmpty: true })
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(postcss([autoprefixer(), cssnano()]))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('dist/dist'))
+		.pipe(gulp.dest('dist'))
 		.pipe(connect.reload())
 })
 
@@ -26,7 +26,7 @@ gulp.task('copy-reveal-js', function () {
 })
 		
 gulp.task('copy-assets', function () {
-	return gulp.src('css/**/assets/**/*')
+		return gulp.src('css/**/assets/**/*')
 		.pipe(through2.obj(function (file, _, cb) {
 			if (file.isDirectory()) {
 				cb(null, file);
@@ -69,9 +69,9 @@ gulp.task('clean', function () {
 // Watch for changes
 gulp.task('watch', function () {
 	console.log('Watching for changes...');
-	gulp.watch('css/**/*.scss', gulp.series('build', 'reload'))
-	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets', 'reload'))
-	gulp.watch('index.html', gulp.series('copy-index', 'reload'))
+	gulp.watch('css/**/*.scss', gulp.series('sass'))
+	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets'))
+	gulp.watch('index.html', gulp.series('copy-index'))
 })
 
 gulp.task('build', gulp.series('clean', gulp.parallel('copy-reveal-js', 'sass', 'copy-assets', 'copy-index')))

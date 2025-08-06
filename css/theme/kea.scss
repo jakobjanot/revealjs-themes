@@ -54,11 +54,11 @@ $selectionBackgroundColor: color.scale($linkColor, $lightness: 25%);
 
 $borderRadius: 0em;
 
-$mainFontSize: 1.4em;
-$heading1Size: 1.9em;
-$heading2Size: 1.6em;
-$heading3Size: 1.3em;
-$heading4Size: 1.0em;
+$mainFontSize: 1.6em;
+$heading1Size: 2.6em;
+$heading2Size: 2.2em;
+$heading3Size: 2.0em;
+$heading4Size: 1.8em;
 $letterSpacing: 0.04em;
 
 $overlayElementBgColor: 0, 0, 0;
@@ -186,49 +186,10 @@ body {
     line-height: 1.5;
 }
 
-.reveal ol {
-    list-style-type: decimal;
-}
-
-.reveal ul {
-    list-style-type: disc;
-}
-
-.reveal ul ul {
-    list-style-type: square;
-}
-
-.reveal ul ul ul {
-    list-style-type: circle;
-}
-
-.reveal ul ul,
-.reveal ul ol,
-.reveal ol ol,
-.reveal ol ul {
-    display: block;
-    margin-left: 40px;
-}
-
-.reveal dt {
-    font-weight: bold;
-}
-
-.reveal dd {
-    margin-left: 40px;
-}
-
-.reveal q,
-.reveal blockquote {
-    quotes: none;
-}
-
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
 .reveal video,
 .reveal iframe {
-    max-width: 95%;
-    max-height: 95%;
     border-radius: var(--r-border-radius);
     overflow: hidden;
 }

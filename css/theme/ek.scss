@@ -1,0 +1,556 @@
+/**
+ * Erhvervsakademi København (EK) Reveal.js Theme
+ * This theme is based on the Reveal.js default theme and
+ * incorporates the EK design guide colors and styles.
+ */
+
+
+// Default mixins and settings -----------------
+@use "sass:color";
+@use "sass:string";
+@import "../../node_modules/reveal.js/css/theme/template/mixins";
+@import "../../node_modules/reveal.js/css/theme/template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+@import url("https://p.typekit.net/p.css?s=1&k=epn7afx&ht=tk&f=59479.59480.59481.59482.59483.59484.59485.59486.59508.59509.59510.59511.59512.59513.59514.59515&a=20029245&app=typekit&e=css");
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/f0da17/00000000000000007759fe67/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/f0da17/00000000000000007759fe67/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/f0da17/00000000000000007759fe67/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/e01ce3/00000000000000007759fe68/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/e01ce3/00000000000000007759fe68/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/e01ce3/00000000000000007759fe68/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/ea318b/00000000000000007759fe6c/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"), url("https://use.typekit.net/af/ea318b/00000000000000007759fe6c/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"), url("https://use.typekit.net/af/ea318b/00000000000000007759fe6c/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 600;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/b04b42/00000000000000007759fe73/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"), url("https://use.typekit.net/af/b04b42/00000000000000007759fe73/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"), url("https://use.typekit.net/af/b04b42/00000000000000007759fe73/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/fa5018/00000000000000007759fe6d/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"), url("https://use.typekit.net/af/fa5018/00000000000000007759fe6d/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"), url("https://use.typekit.net/af/fa5018/00000000000000007759fe6d/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/f50db4/00000000000000007759fe6e/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("woff2"), url("https://use.typekit.net/af/f50db4/00000000000000007759fe6e/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("woff"), url("https://use.typekit.net/af/f50db4/00000000000000007759fe6e/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 300;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/29a381/00000000000000007759fe79/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"), url("https://use.typekit.net/af/29a381/00000000000000007759fe79/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"), url("https://use.typekit.net/af/29a381/00000000000000007759fe79/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-sans";
+    src: url("https://use.typekit.net/af/baa5b7/00000000000000007759fe7b/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("woff2"), url("https://use.typekit.net/af/baa5b7/00000000000000007759fe7b/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("woff"), url("https://use.typekit.net/af/baa5b7/00000000000000007759fe7b/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 600;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/bbe403/00000000000000007759fe83/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"), url("https://use.typekit.net/af/bbe403/00000000000000007759fe83/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"), url("https://use.typekit.net/af/bbe403/00000000000000007759fe83/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 300;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/ac04c6/00000000000000007759fe85/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"), url("https://use.typekit.net/af/ac04c6/00000000000000007759fe85/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"), url("https://use.typekit.net/af/ac04c6/00000000000000007759fe85/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 600;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/7a1c85/00000000000000007759fe87/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/7a1c85/00000000000000007759fe87/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/7a1c85/00000000000000007759fe87/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/5cd0cd/00000000000000007759fe89/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("woff2"), url("https://use.typekit.net/af/5cd0cd/00000000000000007759fe89/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("woff"), url("https://use.typekit.net/af/5cd0cd/00000000000000007759fe89/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 300;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/c17c50/00000000000000007759fe8a/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/c17c50/00000000000000007759fe8a/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/c17c50/00000000000000007759fe8a/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/36d122/00000000000000007759fe8b/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"), url("https://use.typekit.net/af/36d122/00000000000000007759fe8b/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"), url("https://use.typekit.net/af/36d122/00000000000000007759fe8b/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/87c867/00000000000000007759fe9f/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("woff2"), url("https://use.typekit.net/af/87c867/00000000000000007759fe9f/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("woff"), url("https://use.typekit.net/af/87c867/00000000000000007759fe9f/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i6&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 600;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "oso-serif";
+    src: url("https://use.typekit.net/af/8202eb/00000000000000007759fe94/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"), url("https://use.typekit.net/af/8202eb/00000000000000007759fe94/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"), url("https://use.typekit.net/af/8202eb/00000000000000007759fe94/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+// From EK design guide
+$businessBlue: #0038A8;
+$focusBlue: #0C53ED;
+$campusGreen: #ACB504;
+$sunlitEnergy: #E8D285;
+$daylight: #F8EDCA;
+$academicFire: #FE4C61;
+$studentsBlush: #FCA28A;
+$poolsideStudy: #33ABB5;
+$pencilGrey: #333333;
+$grey: #666666;
+$black: #000000;
+$light: #ffffff;
+$dark: $pencilGrey;
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: $light;
+
+$mainColor: $dark;
+$headingColor: $dark;
+
+$inlineCodeColor: $light;
+$inlineCodeBgColor: $academicFire;
+
+$strongColor: $light;
+$strongBgColor: $academicFire;
+
+$mainFont: oso-sans, Montserrat, Arial, sans-serif;
+$codeFont: 'Roboto Mono', 'Courier New', Courier, monospace;
+$headingFont: oso-serif, Times New Roman, Times, serif;
+
+$headingTextShadow: none;
+$headingLetterSpacing: 0.0em;
+$headingTextTransform: normal;
+$headingFontWeight: 300;
+$linkColor: $academicFire;
+$linkColorHover: $studentsBlush;
+$selectionBackgroundColor: $academicFire;
+
+$borderRadius: 0em;
+
+$mainFontSize: 1.6em;
+$heading1Size: 2.6em;
+$heading2Size: 2.2em;
+$heading3Size: 2.0em;
+$heading4Size: 1.8em;
+$letterSpacing: 0.04em;
+
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color($light);
+
+// Theme template ------------------------------
+@import "../../node_modules/reveal.js/css/theme/template/theme";
+// ---------------------------------------------
+
+// Define additional color effects based on Dracula spec
+:root {
+    --r-inline-code-color: #{$inlineCodeColor};
+    --r-inline-code-bg-color: #{$inlineCodeBgColor};
+    --r-strong-color: #{$strongColor};
+    --r-strong-bg-color: #{$strongBgColor};
+    --r-border-radius: #{$borderRadius};
+}
+
+@mixin color-background($color) {
+    background-color: #{$color} !important;
+    background-image: none;
+}
+
+@mixin text-on-dark-bg($color) {
+    color: $light !important;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $light !important;
+    }
+
+    strong,
+    b {
+        background-color: $black !important;
+        color: $light !important;
+    }
+
+    p code {
+        background-color: $black !important;
+        color: $light !important;
+    }
+}
+
+@mixin dark-color-background($color) {
+    @include color-background($color);
+    @include text-on-dark-bg($light);
+}
+
+@function replace-all($string, $search, $replace) {
+    $index: string.index($string, $search);
+
+    @if $index == null {
+        @return $string;
+    }
+
+    $before: string.slice($string, 1, $index - 1);
+    $after: string.slice($string, $index + string.length($search));
+
+    @return replace-all(#{$before}#{$replace}#{$after}, $search, $replace);
+}
+
+$ek-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%223118.111%22%20height%3D%222204.726%22%20viewBox%3D%220%200%202338.583%201653.544%22%20fill%3D%22COLOR2%22%3E%3Cpath%20d%3D%22M0%201653.544h2338.583V.008H0Z%22%2F%3E%3Cpath%20d%3D%22M902.759%20994.138V755.191c0-24.07-19.511-43.58-43.58-43.58H-742.414c-24.07%200-43.58%2019.51-43.58%2043.58v1348.247c0%2024.07%2019.51%2043.58%2043.58%2043.58H859.178c24.07%200%2043.58-19.51%2043.58-43.58V1788.41c0-29.808-29.194-50.802-57.452-41.31-136.294%2045.785-501.672%20152.302-951.097%20152.302-36.961%200-97.322-1.87-137.783-3.289-23.462-.82-42.006-20.078-42.006-43.553v-279.81c0-25.598%2021.956-45.684%2047.453-43.409l699.26%2062.375a43.59%2043.59%200%200%200%2041.756-21.864l110.059-193.494c17.566-30.886-7.211-68.692-42.534-64.822-266.902%2029.26-537.872%2044.997-812.21%2046.51-24.142.134-43.784-19.505-43.784-43.65v-233.094c0-24.07%2019.511-43.583%2043.58-43.583H859.179c24.07%200%2043.58-19.511%2043.58-43.58M1516.65%202147.02h-413.253c-24.067%200-43.578-19.511-43.578-43.58V755.191c0-24.07%2019.511-43.583%2043.578-43.583h413.253c24.07%200%2043.58%2019.514%2043.58%2043.583V2103.44c0%2024.07-19.51%2043.58-43.58%2043.58m1021.884-380.518c-174.495-240.794-487.295-344.797-820.917-344.797-18.742-.256-25.75-24.911-9.83-34.803%20196.955-122.364%20424.53-149.891%20729.263-150.975%2012.27-.041%2024.022-5.22%2032.256-14.32l395.533-437.177c25.35-28.02%205.47-72.82-32.317-72.82h-587.027a43.6%2043.6%200%200%200-32.317%2014.342l-601.992%20665.375c-15.139%2016.734-15.002%2042.256.317%2058.825l631.328%20682.872a43.58%2043.58%200%200%200%2032%2013.995h516.733c41.328%200%2059.472-52.092%2027.056-77.725-71.817-56.792-170.167-151.111-280.086-302.792%22%20fill%3D%22COLOR1%22%2F%3E%3C%2Fsvg%3E";
+$k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%223118.111%22%20height%3D%222204.726%22%20viewBox%3D%220%200%202338.583%201653.544%22%20fill%3D%22COLOR2%22%3E%3Cpath%20d%3D%22M0%201653.544h2338.583V.008H0Z%22%2F%3E%3Cpath%20d%3D%22M1111.782%201231.962C900.72%20940.706%20522.368%20814.906%20118.829%20814.906c-22.667-.308-31.144-30.13-11.889-42.094%20238.23-148.006%20513.497-181.306%20882.092-182.614%2014.842-.053%2029.058-6.314%2039.014-17.322L1506.47%2044.084c30.66-33.892%206.614-88.08-39.092-88.08H757.335a52.7%2052.7%200%200%200-39.092%2017.347L-9.904%20778.164c-18.311%2020.24-18.145%2051.112.383%2071.153l763.63%20825.975a52.7%2052.7%200%200%200%2038.706%2016.93h625.022c49.992%200%2071.94-63.008%2032.728-94.016-86.87-68.692-205.828-182.778-338.783-366.244%22%20fill%3D%22COLOR1%22%2F%3E%3C%2Fsvg%3E";
+
+@mixin svg-background($color1, $color2, $svg-data-uri) {
+    $svg-data-uri-replaced: replace-all($svg-data-uri, "COLOR1", "#{$color2}");
+    $svg-data-uri-replaced: replace-all($svg-data-uri-replaced, "COLOR2", "#{$color1}");
+    background-image: url($svg-data-uri-replaced);
+    background-attachment: fixed;
+    background-position: bottom left;
+    background-size: 100vw auto;
+    background-attachment: fixed;
+}
+
+@mixin dark-svg-background($color1, $color2, $svg-data-uri) {
+    @include svg-background($color1, $color2, $svg-data-uri);
+    @include text-on-dark-bg($light);
+}
+
+@mixin cover-background($image-url) {
+    background-image: url("assets/studerende-blomster-terrasse.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.reveal {
+    // Business blue variants
+    .business-blue {
+        @include dark-color-background($businessBlue);
+    }
+
+    
+    .ek-business-blue {
+        @include svg-background(#{$businessBlue}, $focusBlue, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-business-blue {
+        @include svg-background(#{$businessBlue}, $focusBlue, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Focus blue variants
+    .focus-blue {
+        @include dark-color-background($focusBlue);
+    }
+
+    .ek-focus-blue {
+        @include svg-background(#{$focusBlue}, $poolsideStudy, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-focus-blue {
+        @include svg-background(#{$focusBlue}, $poolsideStudy, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Campus green variants
+    .campus-green {
+        @include color-background($campusGreen);
+    }
+
+    .ek-campus-green {
+        @include svg-background(#{$campusGreen}, #{$sunlitEnergy}, $ek-svg);
+    }
+
+    .k-campus-green {
+        @include svg-background(#{$campusGreen}, #{$sunlitEnergy}, $k-svg);
+    }
+
+    // Sunlit Energy variants
+    .sunlit-energy {
+        @include color-background($sunlitEnergy);
+    }
+
+    .ek-sunlit-energy {
+        @include svg-background(#{$sunlitEnergy}, #{$daylight}, $ek-svg);
+    }
+
+    .k-sunlit-energy {
+        @include svg-background(#{$sunlitEnergy}, #{$daylight}, $k-svg);
+    }
+
+    // Daylight variants
+    .daylight {
+        @include color-background($daylight);
+    }
+
+    .ek-daylight {
+        @include svg-background(#{$daylight}, #{$sunlitEnergy}, $ek-svg);
+    }
+
+    .k-daylight {
+        @include svg-background(#{$daylight}, #{$sunlitEnergy}, $k-svg);
+    }
+
+    // Academic fire variants
+    .academic-fire {
+        @include dark-color-background($academicFire);
+    }
+
+    .ek-academic-fire {
+        @include svg-background(#{$academicFire}, #{$studentsBlush}, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-academic-fire {
+        @include svg-background(#{$academicFire}, #{$studentsBlush}, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Students blush variants
+    .students-blush {
+        @include color-background($studentsBlush);
+    }
+
+    .ek-students-blush {
+        @include svg-background(#{$studentsBlush}, #{$academicFire}, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-students-blush {
+        @include svg-background(#{$studentsBlush}, #{$academicFire}, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Poolside Study variants
+    .poolside-study {
+        @include color-background($poolsideStudy);
+    }
+
+    .ek-poolside-study {
+        @include svg-background(#{$poolsideStudy}, #{$campusGreen}, $ek-svg);
+    }
+
+    .k-poolside-study {
+        @include svg-background(#{$poolsideStudy}, #{$campusGreen}, $k-svg);
+    }
+
+    // Pencil grey variants
+    .pencil-grey {
+        @include color-background($pencilGrey);
+        @include text-on-dark-bg($light);
+    }
+
+    .ek-pencil-grey {
+        @include svg-background(#{$pencilGrey}, $grey, $ek-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    .k-pencil-grey {
+        @include svg-background(#{$pencilGrey}, $grey, $k-svg);
+        @include text-on-dark-bg($light);
+    }
+
+    // Image backgrounds
+
+    .cover-1 {
+        @include cover-background("assets/studerende-blomster-terrasse.jpg");
+    }
+
+    .cover-2 {
+        @include cover-background("assets/studerende-fra-siden.jpg");
+    }
+
+    .cover-3 {
+        @include cover-background("assets/studerende-gul-stol.jpg.webp");
+    }
+
+    .cover-4 {
+        @include cover-background("assets/studerende-laederjakke-bygning.jpg");
+    }
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    line-height: 1.1;
+    strong {
+        font-family: oso-sans, Montserrat, Arial, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        color: $dark;
+        background: none !important;
+        padding: 0 !important;
+    }
+}
+
+.reveal p {
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.reveal em {
+    font-style: italic;
+}
+
+.reveal strong,
+.reveal b {
+    background-color: var(--r-strong-bg-color);
+    color: var(--r-strong-color);
+    border-radius: var(--r-border-radius);
+    padding: 0.1em 0.2em;
+}
+
+.reveal p code {
+    color: var(--r-inline-code-color);
+    background-color: var(--r-inline-code-bg-color);
+    border-radius: var(--r-border-radius);
+    padding: 0.1em 0.2em;
+}
+
+.reveal ul,
+.reveal ol {
+    line-height: 1.5;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+    border-radius: var(--r-border-radius);
+    overflow: hidden;
+}
+
+.reveal pre {
+    border-radius: var(--r-border-radius);
+    overflow: hidden;
+    font-size: clamp(0.5em, calc(1.2em - (var(--line-count, 1) * 0.05em)), 1.2em);
+}
+
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 75%;
+    margin: 20px auto;
+    padding: 5px;
+    font-style: italic;
+    border-radius: var(--r-border-radius);
+    box-shadow: $light 0px 1px 3px 0px, $light 0px 0px 0px 1px;
+    background-color: $light;
+
+    blockquote {
+        background-color: $studentsBlush;
+    }
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+    display: inline-block;
+}
+
+.reveal q {
+    font-style: italic;
+}
+
+.reveal a {
+    color: $academicFire;
+    text-decoration: none;
+}
+
+.reveal a:hover {
+    text-decoration: underline;
+}
+
+.reveal .progress {
+    background-color: $dark;
+}
+
+.reveal .controls {
+    color: $academicFire;
+}
+
+.reveal .progress span {
+    background-color: $academicFire;
+}
