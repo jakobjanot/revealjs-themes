@@ -301,26 +301,23 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
 }
 
 // HACK: Remove weird duplicate background svg image
-.reveal .slides > section > section {
+.reveal .slides section {
     background-image: none !important;
     background-color: transparent !important;
 }
 
-.reveal-viewport {
+.reveal {
     // Business blue variants
     .business-blue {
         @include dark-color-background($businessBlue);
     }
 
-    
     .ek-business-blue {
-        @include svg-background(#{$businessBlue}, $focusBlue, $ek-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$businessBlue}, $focusBlue, $ek-svg);
     }
 
     .k-business-blue {
-        @include svg-background(#{$businessBlue}, $focusBlue, $k-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$businessBlue}, $focusBlue, $k-svg);
     }
 
     // Focus blue variants
@@ -329,13 +326,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-focus-blue {
-        @include svg-background(#{$focusBlue}, $poolsideStudy, $ek-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$focusBlue}, $poolsideStudy, $ek-svg);
     }
 
     .k-focus-blue {
-        @include svg-background(#{$focusBlue}, $poolsideStudy, $k-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$focusBlue}, $poolsideStudy, $k-svg);
     }
 
     // Campus green variants
@@ -383,13 +378,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-academic-fire {
-        @include svg-background(#{$academicFire}, #{$studentsBlush}, $ek-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$academicFire}, #{$studentsBlush}, $ek-svg);
     }
 
     .k-academic-fire {
-        @include svg-background(#{$academicFire}, #{$studentsBlush}, $k-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$academicFire}, #{$studentsBlush}, $k-svg);
     }
 
     // Students blush variants
@@ -398,13 +391,11 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
     }
 
     .ek-students-blush {
-        @include svg-background(#{$studentsBlush}, #{$academicFire}, $ek-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$studentsBlush}, #{$academicFire}, $ek-svg);
     }
 
     .k-students-blush {
-        @include svg-background(#{$studentsBlush}, #{$academicFire}, $k-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$studentsBlush}, #{$academicFire}, $k-svg);
     }
 
     // Poolside Study variants
@@ -422,18 +413,15 @@ $k-svg: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2
 
     // Pencil grey variants
     .pencil-grey {
-        @include color-background($pencilGrey);
-        @include text-on-dark-bg($light);
+        @include dark-color-background($pencilGrey);
     }
 
     .ek-pencil-grey {
-        @include svg-background(#{$pencilGrey}, $grey, $ek-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$pencilGrey}, $grey, $ek-svg);
     }
 
     .k-pencil-grey {
-        @include svg-background(#{$pencilGrey}, $grey, $k-svg);
-        @include text-on-dark-bg($light);
+        @include dark-svg-background(#{$pencilGrey}, $grey, $k-svg);
     }
 
     // Image backgrounds

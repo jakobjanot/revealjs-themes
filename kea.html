@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/kea.css">
+    <link rel="stylesheet" href="theme/kea.css">
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
 </head>
 <body>
@@ -16,181 +16,181 @@
         <div class="slides">
             <section data-markdown data-separator="^\s*---\s*$" data-separator-vertical="^\s*--\s*$" data-separator-notes="^Notes?:">
                 <script type="text/template">  
-          <!-- .slide: data-background="https://kea.dk/slir/w2280-c100x60/images/landingssider/designguide/baggrunde/teams/TEAMS_BGs4.jpg.webp" -->
-          > # KEA reveal.js theme 
+<!-- .slide: class="kea-red" -->
+# KEA reveal.js theme 
 
-          ---
+---
 
-          # Slide color variants
-          This is the **default slide color**.
+# Slide color variants
+This is the **default slide color**.
 
-          Availabe variants are:
-          - kea-dark
-          - kea-red
-          - kea-rose
-          - kea-blue
-          - kea-green
-          - kea-light
-          - kea-grey
-          - kea-purple
+Availabe variants are:
+- kea-dark
+- kea-red
+- kea-rose
+- kea-blue
+- kea-green
+- kea-light
+- kea-grey
+- kea-purple
 
-          --
+--
 
-          Use e.g. `class="kea-dark"` in the slide tag to change the color of the slide.
+Use e.g. `class="kea-dark"` in the slide tag to change the color of the slide.
 
-          ```markdown
-          <!-- .slide: class="kea-dark" -->
-          # Dark variant
-          Lorem ipsum *dolor sit amet*, ...
-          ```
+```markdown
+<!-- .slide: class="kea-dark" -->
+# Dark variant
+Lorem ipsum *dolor sit amet*, ...
+```
 
-          --
-          <!-- .slide: class="kea-dark" -->
-          # Dark variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-dark" -->
+# Dark variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          --
-          <!-- .slide: class="kea-red" -->
-          # Red variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-red" -->
+# Red variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          --
-          <!-- .slide: class="kea-rose" -->
-          # Rose variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-rose" -->
+# Rose variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          --
-          <!-- .slide: class="kea-blue" -->
-          # Blue variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-blue" -->
+# Blue variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          --
-          <!-- .slide: class="kea-green" -->
-          # Green variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-green" -->
+# Green variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          --
-          <!-- .slide: class="kea-light" -->
-          # Light variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-light" -->
+# Light variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          --
-          <!-- .slide: class="kea-grey" -->
-          # Grey variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-grey" -->
+# Grey variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          --
-          <!-- .slide: class="kea-purple" -->
-          # Purple variant
-          Inline **strong text**, *emphasized text* and `inline code`.
+--
+<!-- .slide: class="kea-purple" -->
+# Purple variant
+Inline **strong text**, *emphasized text* and `inline code`.
 
-          ---
+---
 
-          # Headings
+# Headings
 
-          # H1
-          ## H2
-          ### H3
-          #### H4
-          ##### H5
-          ###### H6
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
 
-          A paragraph.
+A paragraph.
 
-          Yet another paragraph with *emphasized text* and **strong text** and [link to Google](https://www.google.com).
+Yet another paragraph with *emphasized text* and **strong text** and [link to Google](https://www.google.com).
 
-          ---
-
-
-          # Code font-size styles after content font-size
-
-          --
-          
-          ```java
-          public class HelloWorld {
-            public static void main(String[] args) {
-              System.out.println("Hello world!");
-            }
-          }
-          ```
-
-          --
-
-          ```java
-          public class HelloWorld {
-            public static void main(String[] args) {
-              System.out.println("Hello world!");  System.out.println("Hello world!"); System.out.println("Hello world!"); 
-              System.out.println("Hello world!"); System.out.println("Hello world!"); System.out.println("Hello world!"); 
-              System.out.println("Hello world!");
-              System.out.println("Hello world!");
-              
-            }
-          }
-          ```
-
-          ---
+---
 
 
-          # Code line-by-line hightlighting
+# Code font-size styles after content font-size
 
-          ```java [|1,5|2-4]
-          public class HelloWorld {
-            public static void main(String[] args) {
-              System.out.println("Hello world!");
-            }
-          }
-          ```
+--
 
-          and `inline` too
+```java
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+  }
+}
+```
 
-          ---
+--
 
-          # Tables
+```java
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");  System.out.println("Hello world!"); System.out.println("Hello world!"); 
+    System.out.println("Hello world!"); System.out.println("Hello world!"); System.out.println("Hello world!"); 
+    System.out.println("Hello world!");
+    System.out.println("Hello world!");
+    
+  }
+}
+```
 
-          | Header 1 | Header 2 | Header 3 |
-          |----------|----------|----------|
-          | Row 1    | Row 1    | Row 1    |
-          | Row 2    | Row 2    | Row 2    |
-          | Row 3    | Row 3    | Row 3    |
+---
 
-          ---
 
-          # Lists
+# Code line-by-line hightlighting
 
-          -- 
+```java [|1,5|2-4]
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+  }
+}
+```
 
-          - Item 1
-          - Item 2
-          - Item 3
+and `inline` too
 
-          --
+---
 
-          1. Item 1
-          2. Item 2
-            1. Nested item 1
-            2. Nested item 2
-          3. Item 3
+# Tables
 
-          --
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Row 1    | Row 1    |
+| Row 2    | Row 2    | Row 2    |
+| Row 3    | Row 3    | Row 3    |
 
-          - [ ] Item 1
-          - [x] Item 2
-          - [ ] Item 3
+---
 
-          ---
+# Lists
 
-          # Blockquotes
-          > This is a blockquote.
-          >> Here is a nested blockquote.
-          >> And another line.
+-- 
 
-          ---
+- Item 1
+- Item 2
+- Item 3
 
-          # Math
+--
 
-          $$
-          \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^\infty e^{-x^2/2} \, dx = 1
-          $$
+1. Item 1
+2. Item 2
+  1. Nested item 1
+  2. Nested item 2
+3. Item 3
+
+--
+
+- [ ] Item 1
+- [x] Item 2
+- [ ] Item 3
+
+---
+
+# Blockquotes
+> This is a blockquote.
+>> Here is a nested blockquote.
+>> And another line.
+
+---
+
+# Math
+
+$$
+\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^\infty e^{-x^2/2} \, dx = 1
+$$
       </script>
     </section>
   </div>
