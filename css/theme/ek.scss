@@ -14,14 +14,12 @@
 
 
 // Jetbrains Mono font
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:italic,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
-// EK fonts alternatives
-
-// oso-serif alternative
+// EK font oso-serif alternative
 @import url('https://fonts.cdnfonts.com/css/avrile-serif');
 
-// oso-sans alternative
+// EK font oso-sans alternative
 @import url('https://fonts.cdnfonts.com/css/aneliza');
 
 // From EK design guide
@@ -73,7 +71,7 @@ $strongColor: $light;
 $strongBgColor: $academicFire;
 
 $mainFont: 'Aneliza', Montserrat, Arial, sans-serif;
-$codeFont: 'Roboto Mono', 'Courier New', Courier, monospace;
+$codeFont: 'JetBrains Mono', 'Courier New', Courier, monospace;
 $headingFont: 'Avrile Serif',  'Times New Roman', Times, serif;
 
 $headingTextShadow: none;

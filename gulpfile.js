@@ -50,7 +50,7 @@ gulp.task('copy-index', function () {
 gulp.task('serve', function () {
 	connect.server({
 		livereload: true,
-		port: 8000,
+		port: 9000,
 		root: './dist'
 	})
 })
