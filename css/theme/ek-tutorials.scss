@@ -4,4 +4,91 @@
  * incorporates the EK design guide colors and styles.
  */
 
-@import "ek-slides.scss";
+
+// Default mixins and settings -----------------
+@use "sass:color";
+@import "../../node_modules/reveal.js/css/theme/template/mixins.scss";
+@import "../../node_modules/reveal.js/css/theme/template/settings.scss";
+// ---------------------------------------------
+
+// Jetbrains Mono font
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+// EK font oso-serif alternative
+@import url('https://fonts.cdnfonts.com/css/avrile-serif');
+
+// EK font oso-sans alternative
+@import url('https://fonts.cdnfonts.com/css/aneliza');
+
+// From EK design guide
+$businessBlue: #0038A8;
+$focusBlue: #0C53ED;
+$campusGreen: #ACB504;
+$sunlitEnergy: #E8D285;
+$daylight: #F8EDCA;
+$academicFire: #FE4C61;
+$studentsBlush: #FCA28A;
+$poolsideStudy: #33ABB5;
+$pencilGrey: #333333;
+$grey: #666666;
+$black: #000000;
+$light: #ffffff;
+$dark: $pencilGrey;
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: $light;
+
+$mainColor: $dark;
+$headingColor: $dark;
+
+$inlineCodeColor: $light;
+$inlineCodeBgColor: $academicFire;
+
+$strongColor: $light;
+$strongBgColor: $academicFire;
+
+$mainFont: 'Aneliza', Montserrat, Arial, sans-serif;
+$codeFont: 'JetBrains Mono', 'Courier New', Courier, monospace;
+$headingFont: 'Avrile Serif',  'Times New Roman', Times, serif;
+
+$headingTextShadow: none;
+$headingLetterSpacing: 0.05em;
+$headingTextTransform: normal;
+$headingFontWeight: 400;
+$linkColor: $academicFire;
+$linkColorHover: $studentsBlush;
+$selectionBackgroundColor: $academicFire;
+
+$borderRadius: 0em;
+
+$mainFontSize: 1em;
+$heading1Size: 2em;
+$heading2Size: 1.8em;
+$heading3Size: 1.6em;
+$heading4Size: 1.4em;
+$letterSpacing: 0.0em;
+
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+
+// ---------------------------------------------
+@import '../../node_modules/reveal.js/css/theme/template/theme.scss';
+
+// Define additional color effects based on Dracula spec
+:root {
+    --r-inline-code-color: #{$inlineCodeColor};
+    --r-inline-code-bg-color: #{$inlineCodeBgColor};
+    --r-strong-color: #{$strongColor};
+    --r-strong-bg-color: #{$strongBgColor};
+    --r-border-radius: #{$borderRadius};
+}
+
+.reveal .slides {
+    text-align: left !important;
+}
+
+// put a thin border around the slides when printing
+html.reveal-print .pdf-page {
+    border: 1px solid $dark !important;
+    border-bottom: none !important;
+}
