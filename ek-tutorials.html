@@ -359,11 +359,13 @@ $$
 // - https://revealjs.com/config/
 Reveal.initialize({
     hash: true,
-    center: true,
     controls: true,
     progress: true,
-    transition: 'slide',
-    transitionSpeed: 'fast',
+    transition: 'none',
+    disableLayout: true,
+    center: false,
+    controlsLayout: 'edges',
+    margin: 0.1,
     plugins: [
         RevealNotes, 
         RevealMath,
