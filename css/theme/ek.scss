@@ -444,7 +444,7 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
     }
 
     .cover-4 {
-        @include cover-background("images/studerende-fra-siden.jpg");
+        @include cover-background("images/diskussion.jpg");
     }
 
     .cover-5 {
@@ -465,6 +465,30 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
 
     .cover-9 {
         @include cover-background("images/studerende-koder.jpg");
+    }
+
+    .cover-10 {
+        @include cover-background("images/studerende-med-ryggen-til.jpg");
+    }
+
+    .cover-11 {
+        @include cover-background("images/studerende-screen.jpg");
+    }
+
+    .cover-12 {
+        @include cover-background("images/laptop-python-book.jpg");
+    }
+
+    .cover-13 {
+        @include cover-background("images/student-with-laptop-under-arm.jpg");
+    }
+
+    .cover-14 {
+        @include cover-background("images/laptop-stickers.jpg");
+    }
+
+    .cover-15 {
+        @include cover-background("images/tre-studerende.jpg");
     }
 }
 
