@@ -2,12 +2,9 @@ const autoprefixer = require('autoprefixer')
 const connect = require('gulp-connect')
 const cssnano = require('cssnano')
 const gulp = require('gulp')
-const path = require('path')
 const postcss = require('gulp-postcss')
 const sass = require('gulp-dart-sass')
 const sourcemaps = require('gulp-sourcemaps')
-const fs = require('fs')
-const through2 = require('through2')
 
 gulp.task('sass', function () {
 	return gulp.src('css/**/*.scss', { allowEmpty: true })
@@ -16,7 +13,6 @@ gulp.task('sass', function () {
 		.pipe(postcss([autoprefixer(), cssnano()]))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('dist'))
-		.pipe(connect.reload())
 })
 
 gulp.task('copy-reveal-js', function () {
@@ -25,26 +21,19 @@ gulp.task('copy-reveal-js', function () {
 		
 })
 		
-gulp.task('copy-assets', function () {
-		return gulp.src('css/**/assets/**/*')
-		.pipe(through2.obj(function (file, _, cb) {
-			if (file.isDirectory()) {
-				cb(null, file);
-				return;
-			}
-			const newPath = path.join('css', path.relative('css', file.path));
-			file.path = newPath;
-			cb(null, file);
-		}
-		))
-		.pipe(gulp.dest('dist'))
-		.pipe(connect.reload())
-})
+gulp.task('copy-images', function () {
+	return gulp.src('css/theme/images/**/*', { encoding: false, allowEmpty: true })
+		.pipe(gulp.dest('dist/theme/images'))
+});
+
+gulp.task('copy-fonts', function () {
+	return gulp.src('css/theme/fonts/**/*', { encoding: false, allowEmpty: true })
+		.pipe(gulp.dest('dist/theme/fonts'))
+});
 
 gulp.task('copy-index', function () {
 	return gulp.src('*.html')
 		.pipe(gulp.dest('dist'))
-		.pipe(connect.reload())
 })
 
 gulp.task('serve', function () {
@@ -70,9 +59,10 @@ gulp.task('clean', function () {
 gulp.task('watch', function () {
 	console.log('Watching for changes...');
 	gulp.watch('css/**/*.scss', gulp.series('sass'))
-	gulp.watch('css/**/assets/**/*', gulp.series('copy-assets'))
+	gulp.watch('css/theme/images/**/*', gulp.series('copy-images'))
+	gulp.watch('css/theme/fonts/**/*', gulp.series('copy-fonts'))
 	gulp.watch('index.html', gulp.series('copy-index'))
 })
 
-gulp.task('build', gulp.series('clean', gulp.parallel('copy-reveal-js', 'sass', 'copy-assets', 'copy-index')))
+gulp.task('build', gulp.series('clean', gulp.parallel('copy-reveal-js', 'sass', 'copy-images', 'copy-fonts', 'copy-index')))
 gulp.task('default', gulp.series('build', gulp.parallel('serve', 'watch')))
