@@ -447,7 +447,25 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
         @include cover-background("images/studerende-fra-siden.jpg");
     }
 
+    .cover-5 {
+        @include cover-background("images/studerende-rooftop.jpg");
+    }
+
+    .cover-6 {
+        @include cover-background("images/studerende-laptop.jpg");
+    }
+
+    .cover-7 {
+        @include cover-background("images/studerende-cykler.jpg");
+    }
     
+    .cover-8 {
+        @include cover-background("images/studerende-hovedtelefoner.jpg");
+    }
+
+    .cover-9 {
+        @include cover-background("images/studerende-koder.jpg");
+    }
 }
 
 .reveal h1,
