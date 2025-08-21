@@ -549,7 +549,44 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
 .reveal pre {
     border-radius: var(--r-border-radius);
     overflow: hidden;
-    font-size: clamp(0.5em, calc(1.2em - (var(--line-count, 1) * 0.05em)), 1.2em);
+}
+
+.reveal {
+    .xx-large {
+        pre {
+            font-size: 1.8rem;
+        }
+    }
+
+    .x-large {
+        pre {
+            font-size: 1.5rem;
+        }
+    }
+
+    .large {
+        pre {
+            font-size: 1.2rem;
+        }
+    }
+
+    .small {
+        pre {
+            font-size: 0.8rem;
+        }
+    }
+
+    .x-small {
+        pre {
+            font-size: 0.6rem;
+        }
+    }
+
+    .xx-small {
+        pre {
+            font-size: 0.4rem;
+        }
+    }
 }
 
 .reveal blockquote {
