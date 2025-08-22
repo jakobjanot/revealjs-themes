@@ -177,3 +177,16 @@ html.reveal-print .pdf-page {
         line-height: 1.2 !important;
     }
 }
+
+@media print {
+  html:not(.print-pdf) .reveal img {
+    border: none !important;
+  }
+}
+
+@media print {
+  img, audio, video {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}
