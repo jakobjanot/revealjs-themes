@@ -18,11 +18,11 @@
                 <script type="text/template">
 # EK reveal.js theme for tutorials
 
---
-
-## Øvelse - ASCII art
+## Eksempel med kode indlejret i numerisk liste
 - De programmer vi laver, som skriver til konsollen, kalder vi **konsol-applikationer**. 
-- Konsol-applikationer består udelukkende af tekst.
+- Konsol-applikationer består udelukkende af tekst:
+  1. Gør dit
+  2. Gør dat
 - I skriftfonte man bruger til kode, **monospace-fonte**, er alle tegn altid samme afstand og bredde på skærmen. Det er i modsætning til de fonte, fx Times New Roman, som vi bruger til at skrive dokumenter i Word, her "fylder" tegnet M mere end fx l.
 - Vi kan udnytte brugen af **monospace**-fonte til at lave "grafik" i konsol-applikationer.
 
@@ -39,34 +39,6 @@
                   "Anden linje" +
                   "Tredje linje";
   System.out.println(lines);
-5. Prøv at kopiere katten til Word og ændre fonten til Times New Roman.
-4. Find selv noget fed **ASCII art** på nettet
-  - eller lav dit eget på [https://www.asciiart.eu/ascii-draw-studio/app](https://www.asciiart.eu/ascii-draw-studio/app)
-5. Print det til **konsollen**
-
---
-
-# Øvelse - Værdier
-
-1. Lav et nyt Java-projekt i IntelliJ, som du navngiver `about-me`
-2. Under `Project` i venstre sidepanel, højreklik på `src` og vælg `New` -> `Java Class`
-3. Giv din klasse navnet `AboutMe`.
-4. Tilføj en `main` metode, så det ligner dette:
-  ```java
-  public class AboutMe {
-      public static void main(String[] args) {
-          String familyName = ???;
-          char givenNameInitial = ???;
-          boolean isCoffeeDrinker = ???;
-          boolean isTeaDrinker = ???;
-
-          System.out.println("Kaffedrikker: " + isCoffeeDrinker);
-          System.out.println("Tedrikker: " + isTeaDrinker);
-      }
-  }
-  ```
-5. Erstat `???` med værdier, der passer til **dig**, variablene er: `familyName` (efternavn),`givenNameInitial` (første bogstav i dit fornavn),`isCoffeeDrinker`/`isTeaDrinker` (drikker du kaffe/te?)
-6. Tilføj et eller flere statements, der udskriver `familyName` og `givenNameInitial` til konsollen vha. `System.out.println`
 
 --
 
@@ -111,15 +83,15 @@ public class BirthYear {
 
 # Øvelse - Hvor meget mel til cookies?
 
-1. Lav et nyt Java-projekt med en klasse med et navn du vælger og en `main` metode
-2. Lav en variabel `cookies` af typen `int` og giv den en værdi på 24
-3. Lav en variabel `flourPerCookie` af typen `double` og giv den en værdi på 0.045 (dvs. 0.045 kg, som er 45 gram mel per cookie)
-4. Lav en `double` variabel `totalFlour` og sæt den til at være lig med `cookies * flourPerCookie`
-5. Udskriv `totalFlour` til skærmen med System.out.println
-6. Prøv at ændre værdien af `cookies` og se hvordan det påvirker resultatet
-7. Ved at ændre på værdien af `cookies` - undersøg hvor mange cookies du lave med 2 kg mel?
-8. Kender du en måde at udregne hvor mange cookies du kan lave med 2 kg mel?
-9. Vores vægt måler ikke mere præcist end 0.001 kg (1 gram), så det er lidt fjollet at vise resultet med 6 decimaler
+ 1. Lav et nyt Java-projekt med en klasse med et navn du vælger og en `main` metode
+ 2. Lav en variabel `cookies` af typen `int` og giv den en værdi på 24
+ 3. Lav en variabel `flourPerCookie` af typen `double` og giv den en værdi på 0.045 (dvs. 0.045 kg, som er 45 gram mel per cookie)
+ 4. Lav en `double` variabel `totalFlour` og sæt den til at være lig med `cookies * flourPerCookie`
+ 5. Udskriv `totalFlour` til skærmen med System.out.println
+ 6. Prøv at ændre værdien af `cookies` og se hvordan det påvirker resultatet
+ 7. Ved at ændre på værdien af `cookies` - undersøg hvor mange cookies du lave med 2 kg mel?
+ 8. Kender du en måde at udregne hvor mange cookies du kan lave med 2 kg mel?
+ 9. Vores vægt måler ikke mere præcist end 0.001 kg (1 gram), så det er lidt fjollet at vise resultet med 6 decimaler
 10. Prøv at ændre `System.out.println(totalFlour);` til `System.out.printf("%.3f kg mel", totalFlour);`
 11. Hvad sker der nu?
 12. Prøv at ændre `%.3f` til `%.2f` og se hvad der sker
