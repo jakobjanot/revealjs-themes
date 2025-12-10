@@ -165,10 +165,8 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
     $svg-data-uri-replaced: replace-all($svg-data-uri, "COLOR1", "#{$color2}");
     $svg-data-uri-replaced: replace-all($svg-data-uri-replaced, "COLOR2", "#{$color1}");
     background-image: url($svg-data-uri-replaced);
-    background-attachment: fixed;
     background-position: bottom left;
     background-size: 100vw auto;
-    background-attachment: fixed;
 }
 
 @mixin dark-svg-background($color1, $color2, $svg-data-uri) {
