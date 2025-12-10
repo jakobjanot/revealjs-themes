@@ -638,9 +638,3 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
 .reveal .progress span {
     background-color: $academicFire;
 }
-
-// put a thin border around the slides when printing
-html.reveal-print .pdf-page {
-    border: 1px solid $dark !important;
-    border-bottom: none !important;
-}
