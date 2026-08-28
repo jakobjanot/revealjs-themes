@@ -544,6 +544,10 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
     line-height: 1.5;
 }
 
+.reveal li {
+    font-weight: 300;
+}
+
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
 .reveal video,
@@ -643,4 +647,5 @@ $o-svg: "data:image/svg+xml,%3Csvg%20width%3D%222338.583%22%20height%3D%221653.5
 
 .reveal table {
     font-size: 0.9em;
+    font-weight: 300;
 }
