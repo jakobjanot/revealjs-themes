@@ -1,0 +1,6 @@
+#!/bin/bash
+count=$1
+for file in *.jpg; do
+    mv "$file" "$(printf "cover-%d.jpg" $count)"
+    ((count++))
+done
